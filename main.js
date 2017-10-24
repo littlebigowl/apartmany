@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
         // if (currentTop > topTo + 100 || currentTop < topTo - 100) {
         //     window.scrollTo(0, 0);
         // }
-
+        document.getElementById("heading").style.display = "none";
         window.scrollTo(0,0);
     });
 

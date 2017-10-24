@@ -376,7 +376,6 @@ body{
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     width: 50%;
-    border: 1px solid red;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -388,8 +387,8 @@ body{
    padding: 10px 25px 0 10px;
 }
 .quoteSign{
+    text-align: right;
     box-sizing: border-box;
-    border: 1px solid red;
     font-size: 60px;
     margin-top: -15px;
     width: 8%;

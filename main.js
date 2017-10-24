@@ -33,42 +33,42 @@ document.addEventListener("DOMContentLoaded", function () {
 
     cennikNav.addEventListener("click", function () {
         var topTo = cennikMain.offsetTop - 50;
-        var currentTop = window.scrollY;
+        var currentTop = getActualScrollTop();
         if (currentTop > topTo + 100 || currentTop < topTo - 100) {
             animateScroll(cennikMain, currentTop, topTo);
         }
     });
     galeriaNav.addEventListener("click", function () {
         var topTo = galeriaMain.offsetTop - 50;
-        var currentTop = window.scrollY;
+        var currentTop = getActualScrollTop();
         if (currentTop > topTo + 100 || currentTop < topTo - 100) {
             animateScroll(galeriaMain, currentTop, topTo);
         }
     });
     kontaktNav.addEventListener("click", function () {
         var topTo = kontaktMain.offsetTop - 50;
-        var currentTop = window.scrollY;
+        var currentTop = getActualScrollTop();
         if (currentTop > topTo + 100 || currentTop < topTo - 100) {
             animateScroll(kontaktMain, currentTop, topTo);
         }
     });
     arrowDown.addEventListener("click", function () {
         var topTo = uvodMain.offsetTop - 50;
-        var currentTop = window.scrollY;
+        var currentTop = getActualScrollTop();
         if (currentTop > topTo + 100 || currentTop < topTo - 100) {
             animateScroll(uvodMain, currentTop, topTo);
         }
     });
     logo.addEventListener("click", function () {
         var topTo = logo.offsetTop;
-        var currentTop = window.scrollY;
+        var currentTop = getActualScrollTop();
         if (currentTop > topTo + 100 || currentTop < topTo - 100) {
             window.scrollTo(0, 0);
         }
     });
 
     window.addEventListener("scroll", function () {
-        if (window.scrollY > kontaktMain.offsetTop - 500) {
+        if (getActualScrollTop(); > kontaktMain.offsetTop - 500) {
             document.getElementById("actualEmail").innerText = "ubytovnahumenne@gmail.com";
         }
     });
@@ -98,6 +98,8 @@ document.addEventListener("DOMContentLoaded", function () {
         loadAndSetPhoto(indexOfActualPhoto);
         updatePhotoCounting(indexOfActualPhoto + 1);
     });
+
+
 
     // LOADING PICTURES TO GALLERY
     function loadPictures() {
@@ -171,6 +173,9 @@ document.addEventListener("DOMContentLoaded", function () {
         if (document.body.scrollTop > 0) {
             actualTop = document.body.scrollTop;
         }
+        if(window.scrollY > 0){
+            actualTop = window.scrollY;
+        }
         return actualTop;
     }
 
@@ -194,7 +199,7 @@ document.addEventListener("DOMContentLoaded", function () {
         var numberOfSteps = (to - from) / step;
         var progress = 0;
         timer = setInterval(function () {
-            window.scrollTo(0, window.scrollY + step);
+            window.scrollTo(0, getActualScrollTop() + step);
 
             progress++;
             if (progress > numberOfSteps) {

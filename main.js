@@ -56,12 +56,14 @@ document.addEventListener("DOMContentLoaded", function () {
     // OPEN GALLERY MODAL
     function openGalleryModal(){
         galleryModal.style.display = "block";
-        document.body.style.overflowY = "hidden";
+        document.documentElement.style.overflow = "hidden";
+        document.body.scroll = "no";
     }
     // CLOSE GALLERY MODAL
     function closeGalleryModal(){
         galleryModal.style.display = "none";
-        document.body.style.overflowY = "auto";
+        document.documentElement.style.overflow = "auto";
+        document.body.scroll = "yes";
     }
 
     crossCloseGalleryModal.addEventListener("click",closeGalleryModal);

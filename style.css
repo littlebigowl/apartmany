@@ -385,6 +385,7 @@ body{
    padding: 10px 25px 0 10px;
 }
 .quoteSign{
+    box-sizing: border-box;
     border: 1px solid red;
     font-size: 60px;
     margin-top: -15px;

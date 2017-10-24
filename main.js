@@ -1,9 +1,5 @@
 document.addEventListener("DOMContentLoaded", function (e) {
     console.log("DOM fully loaded and parsed");
-
-    document.getElementById("heading").innerText = "Ahoj";
-    document.getElementById("heading").style.color = "blue";
-
     var pocetObrazkovNacitanie = 6;
     var celkovyPocetObrazkov = 12;
     var loadedPhotos = 0;
@@ -63,13 +59,11 @@ document.addEventListener("DOMContentLoaded", function (e) {
         }
     });
     logo.addEventListener("click", function () {
-        // var topTo = logo.offsetTop;
-        // var currentTop = getActualScrollTop();
-        // if (currentTop > topTo + 100 || currentTop < topTo - 100) {
-        //     window.scrollTo(0, 0);
-        // }
-        document.getElementById("heading").style.display = "none";
-        window.scrollTo(0,0);
+        var topTo = logo.offsetTop;
+        var currentTop = getActualScrollTop();
+        if (currentTop > topTo + 100 || currentTop < topTo - 100) {
+            window.scrollTo(0, 0);
+        }
     });
 
     

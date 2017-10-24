@@ -52,7 +52,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    document.getElementById("photo1").addEventListener("click",openGalleryModal);
+    document.getElementById("photo1").addEventListener("click",function(){
+        document.getElementById("heading").innerText = "Ahoj"
+        document.getElementById("subHeading").innerText = getScrollTop();
+
+        console.log(getScrollTop());
+    });
 
     // OPEN GALLERY MODAL
     function openGalleryModal(){
@@ -70,6 +75,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     crossCloseGalleryModal.addEventListener("click",closeGalleryModal);
+
+
+    // SCROLL POSITION
+    function getScrollTop(){
+        var supportPageOffset = window.pageXOffset !== undefined;
+        var isCSS1Compat = ((document.compatMode || "") === "CSS1Compat");
+        
+        var y = supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop;
+        return parseInt(y);
+    }
+    
 
 
     

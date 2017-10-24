@@ -7,26 +7,26 @@ document.addEventListener("DOMContentLoaded", function (e) {
     var z = "gmail";
     document.getElementById("actualEmail").innerText = x+y+"@"+z+".com";
 
-    // var cennikNav = document.getElementById("cennikNav");
-    // var galeriaNav = document.getElementById("galeriaNav");
-    // var kontaktNav = document.getElementById("kontaktNav");
-    // var arrowDown = document.getElementById("arrowDown");
-    // var logo = document.getElementById("logo");
+    var cennikNav = document.getElementById("cennikNav");
+    var galeriaNav = document.getElementById("galeriaNav");
+    var kontaktNav = document.getElementById("kontaktNav");
+    var arrowDown = document.getElementById("arrowDown");
+    var logo = document.getElementById("logo");
 
-    // var uvodMain = document.getElementById("uvod");
-    // var cennikMain = document.getElementById("cennik");
-    // var galeriaMain = document.getElementById("galeria");
-    // var kontaktMain = document.getElementById("kontakt");
+    var uvodMain = document.getElementById("uvod");
+    var cennikMain = document.getElementById("cennik");
+    var galeriaMain = document.getElementById("galeria");
+    var kontaktMain = document.getElementById("kontakt");
 
-    // var galleryContainer = document.getElementById("galeriaContainer");
-    // var morePhotosButton = document.getElementById("morePhotosButton");
-    // var galleryModal = document.getElementById("galleryModal");
-    // var crossCloseGalleryModal = document.getElementById("crossCloseGalleryModal");
-    // var actualPhoto = document.getElementById("actualPhoto");
-    // var galleryNavLeft = document.getElementById("galleryNavLeft");
-    // var galleryNavRight = document.getElementById("galleryNavRight");
-    // var countTotalPhotos = document.getElementById("countTotalPhotos");
-    // var countActualPhoto = document.getElementById("countActualPhoto");
+    var galleryContainer = document.getElementById("galeriaContainer");
+    var morePhotosButton = document.getElementById("morePhotosButton");
+    var galleryModal = document.getElementById("galleryModal");
+    var crossCloseGalleryModal = document.getElementById("crossCloseGalleryModal");
+    var actualPhoto = document.getElementById("actualPhoto");
+    var galleryNavLeft = document.getElementById("galleryNavLeft");
+    var galleryNavRight = document.getElementById("galleryNavRight");
+    var countTotalPhotos = document.getElementById("countTotalPhotos");
+    var countActualPhoto = document.getElementById("countActualPhoto");
 
     // cennikNav.addEventListener("click", function () {
     //     var topTo = cennikMain.offsetTop - 50;

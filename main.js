@@ -53,14 +53,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     document.getElementById("photo1").addEventListener("click",function(){
-        document.getElementById("heading").innerText = "Ahoj"
+        
+        openGalleryModal();
+        document.getElementById("heading").innerText = "Ahoj";
         document.getElementById("subHeading").innerText = getScrollTop();
 
-        console.log(getScrollTop());
     });
 
+    var helpTopForModal = 0;
     // OPEN GALLERY MODAL
     function openGalleryModal(){
+        helpTopForModal = getScrollTop();
         galleryModal.style.display = "block";
         document.documentElement.style.overflow = "hidden";
         document.documentElement.style.position = "fixed";
@@ -72,6 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.documentElement.style.overflow = "auto";
         document.documentElement.style.position = "initial";
         document.body.scroll = "yes";
+        window.scrollTo(0,helpTopForModal);
     }
 
     crossCloseGalleryModal.addEventListener("click",closeGalleryModal);

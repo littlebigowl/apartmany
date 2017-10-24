@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     window.addEventListener("scroll", function () {
-        if (getActualScrollTop(); > kontaktMain.offsetTop - 500) {
+        if (getActualScrollTop() > kontaktMain.offsetTop - 500) {
             document.getElementById("actualEmail").innerText = "ubytovnahumenne@gmail.com";
         }
     });

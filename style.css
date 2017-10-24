@@ -376,16 +376,16 @@ body{
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     width: 50%;
-    /* border: 1px solid red; */
+    border: 1px solid red;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
 }
 .samotneHodnotenie blockquote{
-   padding: 10px 25px 0 8px;
+   padding: 10px 25px 0 10px;
 }
 .quoteSign{
-    /* border: 1px solid red; */
+    border: 1px solid red;
     font-size: 60px;
     margin-top: -15px;
 }

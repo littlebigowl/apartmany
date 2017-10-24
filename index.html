@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="sk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Apartmány Humenné</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+</head>
+
+<body>
+
+    <!-- GALLERY MODAL -->
+    <div id="galleryModal">
+        <span id="crossCloseGalleryModal">&times;</span>
+        <div id="modalGalleryHeading">
+            <p id="photosCounting">
+                <span id="countActualPhoto"></span> /
+                <span id="countTotalPhotos"></span>
+            </p>
+        </div>
+        <div id="actualPhoto"></div>
+        <div id="galleryNav">
+            <div id="galleryNavLeft" class="galleryNavigation">&lt;</div>
+            <div id="galleryNavRight" class="galleryNavigation">&gt;</div>
+        </div>
+    </div>
+
+
+    <!-- NAV MENU -->
+    <div class="nav" id="myNav">
+        <div id="logo"></div>
+        <div class="navItem">
+            <a id="cennikNav">Cenník</a>
+        </div>
+        <div class="navItem">
+            <a id="galeriaNav">Galéria</a>
+        </div>
+        <div class="navItem">
+            <a id="kontaktNav">Kontakt</a>
+        </div>
+    </div>
+    <div id="arrowDown"></div>
+
+    <!-- LANDING PAGE -->
+    <header id="mainHeader">
+        <div id="landingContainer">
+            <p id="heading">Apartmány Humenné </p>
+            <p id="subHeading">
+                Najobľúbenejšie ubytovanie,
+                <br> priamo v centre mesta
+            </p>
+        </div>
+        <div id="reservation">
+            <p id="priceLandingPage">už od
+                <span id="price">10&euro;</span> osoba / noc</p>
+            <p id="phoneLandingPage">+421 918 405 730</p>
+        </div>
+    </header>
+
+    <!-- HLAVNY OBSAH -->
+    <div id="mainSectionContainer">
+        <!-- UVOD -->
+        <section id="uvod">
+            <div class="sectionContainer">
+                <p class="sectionHeading">Nové apartmány v centre mesta!</p>
+                <p>
+                    Celoročné nonstop ubytovanie v nových apartmánoch s kapacitou 30 lôžok.
+                    <br> Každý apartmán disponuje vlastnou kúpeľňou (sprchový kút / vaňa), WiFi pripojením, TV, plne vybavenou
+                    kuchyňou a je zariadený s dôrazom na pohodlie a kvalitný odpočinok.
+                </p>
+
+            </div>
+        </section>
+
+        <!-- CENNIK -->
+        <section id="cennik">
+            <div class="sectionContainer">
+                <p class="sectionHeading">
+                    Cenník
+                    <br>
+                    <span class="sectionSubHeading">cena za 1 celý apartmán / 1 noc</span>
+                </p>
+                <!-- JEDNOSPÁLŇOVÝ BYT -->
+                <div class="cennikByt">
+                    <div class="cennikHead">JEDNOSPÁLŇOVÝ (3 lôžka)</div>
+                    <div class="cenaContainer">
+                        <div class="polozkaCena">
+                            <div class="pocetOsob">1 - 2 osoby</div>
+                            <div class="cena">
+                                <span class="akcnaCena">35,00 &euro;</span>&nbsp;
+                                <span class="normalnaCena">40,00 &euro;</span>
+                            </div>
+                        </div>
+                        <div class="polozkaCena">
+                            <div class="pocetOsob">3 osoby</div>
+                            <div class="cena">
+                                <span class="akcnaCena">45,00 &euro;</span>&nbsp;
+                                <span class="normalnaCena">50,00 &euro;</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- VIACSPÁLŇOVÝ BYT -->
+                <div class="cennikByt">
+                    <div class="cennikHead">VIACSPÁLŇOVÝ (5 + 1 lôžok)</div>
+                    <div class="cenaContainer">
+                        <div class="polozkaCena">
+                            <div class="pocetOsob">1 - 2 osoby</div>
+                            <div class="cena">
+                                <span class="akcnaCena">30,00 &euro;</span>&nbsp;
+                                <span class="normalnaCena">35,00 &euro;</span>
+                            </div>
+                        </div>
+                        <div class="polozkaCena">
+                            <div class="pocetOsob">3 osoby</div>
+                            <div class="cena">
+                                <span class="akcnaCena">40,00 &euro;</span>&nbsp;
+                                <span class="normalnaCena">45,00 &euro;</span>
+                            </div>
+                        </div>
+                        <div class="polozkaCena">
+                            <div class="pocetOsob">4 osoby</div>
+                            <div class="cena">
+                                <span class="akcnaCena">50,00 &euro;</span>&nbsp;
+                                <span class="normalnaCena">55,00 &euro;</span>
+                            </div>
+                        </div>
+                        <div class="polozkaCena">
+                            <div class="pocetOsob">5 - 6 osôb</div>
+                            <div class="cena">
+                                <span class="akcnaCena">60,00 &euro;</span>&nbsp;
+                                <span class="normalnaCena">65,00 &euro;</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- PODKROVNÝ BYT -->
+                <div class="cennikByt">
+                    <div class="cennikHead">PODKROVNÝ (4 lôžka)</div>
+                    <div class="cenaContainer">
+                        <div class="polozkaCena">
+                            <div class="pocetOsob">1 - 2 osoby</div>
+                            <div class="cena">
+                                <span class="akcnaCena">35,00 &euro;</span>&nbsp;
+                                <span class="normalnaCena">40,00 &euro;</span>
+                            </div>
+                        </div>
+                        <div class="polozkaCena">
+                            <div class="pocetOsob">3 osoby</div>
+                            <div class="cena">
+                                <span class="akcnaCena">45,00 &euro;</span>&nbsp;
+                                <span class="normalnaCena">50,00 &euro;</span>
+                            </div>
+                        </div>
+                        <div class="polozkaCena">
+                            <div class="pocetOsob">4 osoby</div>
+                            <div class="cena">
+                                <span class="akcnaCena">55,00 &euro;</span>&nbsp;
+                                <span class="normalnaCena">60,00 &euro;</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="cenaDodatok">
+                    <p>Dieťa do 6 rokov:
+                        <span class="akcnaCena">5,00 &euro;</span>
+                        <span class="bold"> / 1 noc.</span>
+                    </p>
+                    <p>Turistický poplatok
+                        <span class="bold">0,50 &euro; osoba / noc</span> je zahrnutý v cene apartmánu.</p>
+                    <p>Platba:
+                        <span class="bold">HOTOVOSŤ / FAKTÚRA.</span>
+                    </p>
+                    <p class="red">Pri pobyte viacerých osôb na viac nocí poskytujeme ďalšiu
+                        <span class="bold">ZĽAVU.</span>
+                    </p>
+                    <p>Príchod:
+                        <span class="bold">od 14:00 hod. do 22:00 hod.</span> - nutné dohodnúť telefonicky.</p>
+                    <p>Odchod:
+                        <span class="bold">do 10:00 hod.</span>, prípadne dohodou.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- GALERIA -->
+        <section id="galeria">
+            <div class="sectionContainer">
+                <p class="sectionHeading">Galéria</p>
+
+                <!-- OBRAZKY SA NACITAJU POMOCOU JAVASCRIPTU -->
+                <div id="galeriaContainer"></div>
+
+                <button id="morePhotosButton">VIAC FOTIEK</button>
+            </div>
+
+        </section>
+
+        <!-- HODNOTENIE ZAKAZNIKOV -->
+        <section id="hodnotenie">
+            <div class="sectionContainer">
+                <p class="sectionHeading">Povedali o nás</p>
+                <div id="hodnotenieContainer">
+                    <div class="samotneHodnotenie">
+                        <div class="quoteSign">&#8220;</div>
+                        <div>
+                            <blockquote>
+                                Veľmi príjemné ubytovanie, čisto, útulne, pohodlne. Všade blízko či do mesta, alebo k verejnej doprave ( vlak, autobus).
+                                Ideálny východiskový bod do okolia.
+                            </blockquote>
+                            <p class="menoHodnotenie"> - Jarmila -</p>
+                        </div>
+                    </div>
+                    <div class="samotneHodnotenie">
+                        <div class="quoteSign">&#8220;</div>
+                        <div>
+                            <blockquote>
+                                Ochota a ústretovosť personálu, čistota, vybavenie, ubytovanie blízko železničnej stanice aj centra mesta. Určite využijeme
+                                v prípade potreby znovu.
+                            </blockquote>
+                            <p class="menoHodnotenie"> - Zuzana -</p>
+                        </div>
+                    </div>
+                    <div class="samotneHodnotenie">
+                        <div class="quoteSign">&#8220;</div>
+                        <div>
+                            <blockquote>
+                                Prístup personálu bol veľmi profesionálny. Cítili sme sa veľmi dobre. Všetky spotrebiče boli fungujúce, vybavená kuchyňa,
+                                Wi-Fi signál, čistota priestorov, komfort a poloha. Navyše lokalita v centre mesta Humenné
+                                priniesla maximálnu spokojnosť.
+                            </blockquote>
+                            <p class="menoHodnotenie"> - Jana -</p>
+                        </div>
+                    </div>
+                    <div class="samotneHodnotenie">
+                        <div class="quoteSign">&#8220;</div>
+                        <div>
+                            <blockquote>
+                                Pán ubytovateľ bol veľmi milý, flexibilný človek. Keď nás videl, že si nesieme spoločenský odev,opýtal sa nás na akú udalosť
+                                ideme a po našej odpovedi, že na svadbu, nám okamžite sám navrhol, že si môžeme dlhšie pospať
+                                a neskôr sa odubytovať.
+                            </blockquote>
+                            <p class="menoHodnotenie"> - Eva -</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- KONTAKT -->
+        <section id="kontakt">
+            <div class="sectionContainer">
+                <p class="sectionHeading">Kontakt</p>
+                <div id="kontaktContainer">
+                    <div id="kontaktAdresa" class="adressItem">
+                        <p class="bold">ADRESA:</p>
+                        <p id="actualAdress">
+                            Apartmány Humenné
+                            <br> Kukorelliho 1503/42
+                            <br> 066 01 Humenné
+                        </p>
+                        <p id="odkazNaMapy">
+                            <a target="blank" href="https://www.google.com/maps/place/Kukorelliho+1503%2F42,+066+01+Humenn%C3%A9,+Slovensko/@48.9330288,21.9066823,17.25z/data=!4m15!1m9!4m8!1m0!1m6!1m2!1s0x473eb5048a46eea1:0x60a59f40ed4d6d2d!2sKukorelliho+1503%2F42,+066+01+Humenn%C3%A9,+Slovensko!2m2!1d21.9078463!2d48.9334797!3m4!1s0x473eb5048a46eea1:0x60a59f40ed4d6d2d!8m2!3d48.9334797!4d21.9078463?hl=cs">Pozri v Google mapách</a>
+                        </p>
+                    </div>
+                    <div id="kontaktFormular" class="adressItem">
+                        <p>MOBIL:
+                            <span class="bold">+421 918 405 730</span>
+                        </p>
+                        <p>EMAIL:
+                            <span class="bold" id="actualEmail"></span>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <!-- MAPA GOOGLE -->
+    <div id="map"></div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div id="footerContainer">
+            <div id="footerLeft">
+                <p id="prevadzkovatel">Prevádzkovateľ:</p>
+                <p>
+                    AV+SV, s.r.o.
+                    <br> Kukorelliho 1499/24
+                    <br> 066 01 Humenné
+                </p>
+                <p>
+                    IČO: 44 225 482
+                    <br> DIČ: 2022628212
+                </p>
+            </div>
+            <div id="footerRight">
+                <p>Copyright &copy; 2017,
+                    <br>AV + SV, s.r.o.</p>
+                <p id="creatorContainer">CREATED BY:
+                    <br>
+                    <a id="creator" target="blank" href="https://littlebigowl.github.io/space/">Peter Sciranka</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GOOGLE MAPS -->
+    <script>
+        function initMap() {
+            var options = {
+                zoom: 17,
+                center: { lat: 48.933567, lng: 21.907837 }
+            }
+            // new map
+            var map = new google.maps.Map(document.getElementById("map"), options);
+
+            // add marker
+            var marker = new google.maps.Marker({
+                position: { lat: 48.933567, lng: 21.907837 },
+                map: map
+            });
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSeWcGwiJhXeoDuS8S1PQVXCHnlGbyAIs&callback=initMap">
+    </script>
+    <script src="main.js"></script>
+</body>
+
+</html>

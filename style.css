@@ -1,0 +1,522 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,600&subset=latin-ext');
+
+*{
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid red;     */
+}
+
+body{
+    font-family: "Poppins",Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+#myNav{
+    max-width: 1000px;
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    background: rgba(0, 0, 0, 0.6);
+    box-sizing: border-box;
+    position: fixed;
+    z-index: 20;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.bold{
+    font-weight: 600;
+}
+.red{
+    color: rgb(219, 1, 1);
+}
+
+#logo{
+    width: 10%;
+    background: url("logo.png") center center no-repeat;
+    background-size: contain;
+}
+#logo:hover{
+    cursor: pointer;
+}
+.navItem{
+    padding: 6px 0;
+    width: 30%;
+    text-align: center;
+}
+
+.navItem:hover{
+    cursor: pointer;
+    color: #FFD700; 
+}
+
+
+#myNav a{
+    font-size: calc(20px + 0.3vw);
+    text-decoration: none;
+    color: #eee; 
+}
+#myNav a:hover{
+    text-decoration: none;
+    color: #FFD700; 
+}
+
+
+#mainHeader{
+    background-image: url("images/bg3.jpeg");
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#landingContainer{
+    /* background: rgba(0, 0, 0, 0.7); */
+    padding: 10px 35px;
+    border-radius: 5px;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 10vh;
+}
+
+
+#heading{
+    font-size: calc(32px + 1vw);
+    font-weight: 600;
+    color: #FFD700;
+}
+
+#subHeading{
+    font-size: calc(16px + 0.7vw);
+}
+
+#reservation{
+    text-align: center;
+    font-size: calc(24px + 0.7vw);
+    font-weight: 600;
+    color: #eee;
+    z-index: 1;
+}
+
+#price{
+    color: #FFD700;
+}
+
+#phoneLandingPage{
+    background: rgba(255, 215, 0, 0.7);
+    border-radius: 5px;
+    color: #111;
+    margin-top: 10px;
+    
+}
+
+#arrowDown{
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    background-image: url("images/arrowDown32.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 2vh;
+
+    border: 2px solid rgba(238, 238, 238, 0.705);
+    border-radius: 50%;
+    z-index: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+#arrowDown:hover{
+    border: 2px solid #FFD700;
+    cursor: pointer;
+}
+
+#mainSectionContainer{
+    background: rgb(250, 250, 250);
+    color: #333;
+}
+
+.sectionContainer{
+    max-width: 1000px;
+    width: 60%;
+    margin: 0 auto;
+    font-size: calc(16px + 0.2vw);
+}
+
+#mainSectionContainer section{
+    padding: 64px 0 80px 0;
+}
+
+.sectionSubHeading{
+    font-size: 16px;
+}
+
+#mainSectionContainer section .sectionHeading{
+    font-weight: 600;
+    font-size: calc(20px + 0.4vw);
+    text-transform: uppercase;
+    padding: 0px 0 30px 0;
+    text-align: center;
+}
+
+#uvod{
+    text-align: center;
+}
+
+
+#cennik, #hodnotenie{
+    background: rgb(235, 233, 233);
+}
+
+#cennik .sectionHeading{
+    line-height: 1.2;
+}
+
+.cennikHead{
+    text-align: center;
+    border-bottom: 1px solid #333;
+}
+
+.cennikByt{
+    max-width: 600px;
+    margin: 0 auto 40px auto; 
+}
+
+.polozkaCena{
+    display: flex;
+}
+.pocetOsob{
+    width: 40%;
+    box-sizing: border-box;
+    padding-left: 10px;
+}
+.cena{
+    width: 60%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.akcnaCena{
+    color: rgb(219, 1, 1);
+    font-weight: 600;
+}
+.normalnaCena{
+    text-decoration: line-through;
+}
+
+#cenaDodatok p{
+    margin-bottom: 8px;
+    font-size: calc(16px + 0.1vw);
+}
+
+
+#galeria button{
+    display: block;
+    margin: 0 auto;
+    border: 2px solid rgb(255, 213, 0);
+    background: rgba(255, 213, 0, 0.74);
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-size: calc(12px + 0.2vw);
+}
+#galeria button:hover, #galeria button:active{
+    cursor: pointer;
+}
+
+
+
+#galeriaContainer{
+    margin-bottom: 15px;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.obrazokContainer{
+    box-sizing: border-box;
+    width: calc(100%/3);
+    padding: 0 0.6vh;
+}
+
+.obrazokContainer:hover{
+   cursor: pointer;
+}
+
+.galeriaObrazok{
+    width: 100%;
+    
+}
+
+
+
+
+
+#galleryModal{
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 100;
+    display: none;
+}
+#crossCloseGalleryModal{
+    position: absolute;
+    color: #ccc;    
+    font-size: 36px;
+    top: 5px;
+    right: 25px;
+    z-index: 110;
+}
+#crossCloseGalleryModal:hover{
+    cursor: pointer;
+    color: #ffd500;
+}
+
+#photosCounting{
+    position: absolute;
+    width: 100%;
+    padding: 15px 0 8px 0;
+    font-size: 18px;
+    text-align: center;
+    color: #eee;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 105;
+}
+
+#actualPhoto{
+    width: 95%;
+    height: 95vh;
+    /* border: 1px solid red; */
+}
+
+#galleryNav{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    display: flex;
+    text-align: center;
+
+    
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.galleryNavigation{
+    width: 50%;
+    color: #eee;
+    background: rgba(0, 0, 0, 0.4);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.galleryNavigation:hover{
+    cursor: pointer;
+    color: #ffd500;
+    background: rgba(0, 0, 0, 0.7);
+}
+.galleryNavigation:focus{
+    color: #eee;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+#hodnotenieContainer{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: flex;
+    flex-wrap: wrap;
+}
+.samotneHodnotenie{
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    width: 50%;
+    /* border: 1px solid red; */
+    display: flex;
+}
+.samotneHodnotenie blockquote{
+   padding: 10px 25px 0 8px;
+}
+.quoteSign{
+    /* border: 1px solid red; */
+    font-size: 60px;
+    margin-top: -15px;
+}
+.menoHodnotenie{
+    text-align: right;
+    padding: 0 15px 0 0;
+}
+
+#kontaktContainer{
+    display: flex;
+    flex-wrap: wrap;
+}
+.adressItem{
+    width: 50%;
+    margin-bottom: 1px;
+    box-sizing: border-box;
+    padding: 10px;
+}
+#actualAdress{
+    margin-bottom: 5px;
+}
+
+#map{
+    width: 100%;
+    height: 400px;
+}
+
+#mainSectionContainer #kontakt{
+    padding-bottom: 50px;
+}
+#odkazNaMapy{
+    margin-bottom: 10px;
+}
+#odkazNaMapy a{
+    background: #333;
+    color: #ffd500;
+    border-radius: 4px;
+    padding: 3px 10px;
+    text-decoration: none;
+}
+
+
+
+.clear{
+    clear: both;
+}
+
+footer{
+    font-size: 12px;
+    background: rgb(95, 95, 95);
+    color: rgb(209, 209, 209);
+    padding: 25px 20px;
+}
+#footerContainer{
+    max-width: 1000px;
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+}
+#footerLeft{
+    width: 50%;
+}
+#footerRight{
+    width: 50%;
+    text-align:  right;
+}
+#footerLeft p, #footerRight p{
+    padding: 3px 0;
+}
+#prevadzkovatel{
+    padding: 0 0;
+    max-width: 120px;
+    border-bottom: 1px solid #ccc;
+}
+#creatorContainer{
+    margin-top: 15px;
+}
+#creator{
+    text-decoration: none;
+    color: #eee;
+}
+#creator:hover{
+    cursor: pointer;
+}
+
+
+
+
+@media (max-width: 1000px){
+    #landingContainer{ 
+        padding: 10px 20px;  
+    }
+
+    #heading{
+        /* font-size: calc(16px + 1.8vw); */
+        line-height: 1.3;
+        margin-bottom: 10px;
+        font-weight: 600;    
+    }
+
+    #reservation{
+        text-align: center;
+        font-size: calc(20px + 1vw);
+        font-weight: 600;
+        color: #eee;
+    }
+
+    .sectionContainer, #footerContainer{
+        width: 80%;
+    }
+    #kontaktAdresa,#kontaktFormular{
+        width: 100%;
+    }
+}
+
+@media (max-width: 678px){
+
+    #landingContainer{ 
+        padding: 10px 20px;  
+    }
+
+    #heading{
+        /* font-size: calc(16px + 1.8vw); */
+        line-height: 1.3;
+        margin-bottom: 10px;
+        font-weight: 600;    
+    }
+
+    #reservation{
+        font-size: calc(20px + 1vw);
+    }
+
+    .sectionContainer, #footerContainer{
+        width: 80%;
+    }
+
+    .obrazokContainer{
+        width: 50%;
+    }
+    .samotneHodnotenie{
+        width: 100%;
+    }
+    .quoteSign{
+        font-size: 50px;
+        margin-top: -10px;        
+    }
+    
+}
+
+
+@media (max-width: 414px){
+    .sectionContainer{
+        width: 90%;
+        font-size: 16px;
+    }
+    #footerContainer{
+        width: 100%;
+    }
+    .sectionSubHeading{
+        font-size: 14px;
+    }
+    #cenaDodatok p{
+        margin-bottom: 8px;
+        font-size: 16px;
+    }
+    .obrazokContainer{
+        width: 50%;
+    }
+}

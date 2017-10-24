@@ -1,0 +1,2 @@
+# apartmany
+SinglePage for friend

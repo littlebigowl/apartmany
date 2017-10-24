@@ -67,43 +67,43 @@ document.addEventListener("DOMContentLoaded", function () {
     
     // morePhotosButton.addEventListener("click", loadPictures);
 
-    // function getActualScrollTop() {
-    //     let actualTop = 0;
-    //     if (document.documentElement.scrollTop > 0) {
-    //         actualTop = document.documentElement.scrollTop;
-    //     }
-    //     if (document.body.scrollTop > 0) {
-    //         actualTop = document.body.scrollTop;
-    //     }
-    //     if(window.scrollY > 0){
-    //         actualTop = window.scrollY;
-    //     }
-    //     return actualTop;
-    // }
+    function getActualScrollTop() {
+        let actualTop = 0;
+        if (document.documentElement.scrollTop > 0) {
+            actualTop = document.documentElement.scrollTop;
+        }
+        if (document.body.scrollTop > 0) {
+            actualTop = document.body.scrollTop;
+        }
+        if(window.scrollY > 0){
+            actualTop = window.scrollY;
+        }
+        return actualTop;
+    }
 
-    // // ANIMATION SCROLL TO
-    // function animateScroll(elem, from, to) {
-    //     if (!elem || elem.classList.contains("clicked")) {
-    //         console.log("returned animation");
-    //         return;
-    //     }
-    //     elem.className += "clicked";
+    // ANIMATION SCROLL TO
+    function animateScroll(elem, from, to) {
+        if (!elem || elem.classList.contains("clicked")) {
+            console.log("returned animation");
+            return;
+        }
+        elem.className += "clicked";
 
-    //     var fps = 50;
-    //     var step = 50;
-    //     if (from > to) {
-    //         step *= -1;
-    //     }
-    //     var numberOfSteps = (to - from) / step;
-    //     var progress = 0;
-    //     timer = setInterval(function () {
-    //         window.scrollTo(0, getActualScrollTop() + step);
+        var fps = 50;
+        var step = 50;
+        if (from > to) {
+            step *= -1;
+        }
+        var numberOfSteps = (to - from) / step;
+        var progress = 0;
+        timer = setInterval(function () {
+            window.scrollTo(0, getActualScrollTop() + step);
 
-    //         progress++;
-    //         if (progress > numberOfSteps) {
-    //             clearInterval(timer);
-    //             elem.className = "";
-    //         }
-    //     }, 1000 / fps);
-    // }
+            progress++;
+            if (progress > numberOfSteps) {
+                clearInterval(timer);
+                elem.className = "";
+            }
+        }, 1000 / fps);
+    }
 });

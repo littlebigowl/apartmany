@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function (e) {
+document.addEventListener("DOMContentLoaded", function () {
     console.log("DOM fully loaded and parsed");
 
     // SHOW EMAIL
@@ -28,49 +28,44 @@ document.addEventListener("DOMContentLoaded", function (e) {
     var countTotalPhotos = document.getElementById("countTotalPhotos");
     var countActualPhoto = document.getElementById("countActualPhoto");
 
-    // cennikNav.addEventListener("click", function () {
-    //     var topTo = cennikMain.offsetTop - 50;
-    //     var currentTop = getActualScrollTop();
-    //     if (currentTop > topTo + 100 || currentTop < topTo - 100) {
-    //         animateScroll(cennikMain, currentTop, topTo);
-    //     }
-    // });
-    // galeriaNav.addEventListener("click", function () {
-    //     var topTo = galeriaMain.offsetTop - 50;
-    //     var currentTop = getActualScrollTop();
-    //     if (currentTop > topTo + 100 || currentTop < topTo - 100) {
-    //         animateScroll(galeriaMain, currentTop, topTo);
-    //     }
-    // });
-    // kontaktNav.addEventListener("click", function () {
-    //     var topTo = kontaktMain.offsetTop - 50;
-    //     var currentTop = getActualScrollTop();
-    //     if (currentTop > topTo + 100 || currentTop < topTo - 100) {
-    //         animateScroll(kontaktMain, currentTop, topTo);
-    //     }
-    // });
-    // arrowDown.addEventListener("click", function () {
-    //     var topTo = uvodMain.offsetTop - 50;
-    //     var currentTop = getActualScrollTop();
-    //     if (currentTop > topTo + 100 || currentTop < topTo - 100) {
-    //         animateScroll(uvodMain, currentTop, topTo);
-    //     }
-    // });
-    // logo.addEventListener("click", function () {
-    //     var topTo = logo.offsetTop;
-    //     var currentTop = getActualScrollTop();
-    //     if (currentTop > topTo + 100 || currentTop < topTo - 100) {
-    //         window.scrollTo(0, 0);
-    //     }
-    // });
-
-    
+    cennikNav.addEventListener("click", function () {
+        var topTo = cennikMain.offsetTop - 50;
+        var currentTop = getActualScrollTop();
+        if (currentTop > topTo + 100 || currentTop < topTo - 100) {
+            animateScroll(cennikMain, currentTop, topTo);
+        }
+    });
+    galeriaNav.addEventListener("click", function () {
+        var topTo = galeriaMain.offsetTop - 50;
+        var currentTop = getActualScrollTop();
+        if (currentTop > topTo + 100 || currentTop < topTo - 100) {
+            animateScroll(galeriaMain, currentTop, topTo);
+        }
+    });
+    kontaktNav.addEventListener("click", function () {
+        var topTo = kontaktMain.offsetTop - 50;
+        var currentTop = getActualScrollTop();
+        if (currentTop > topTo + 100 || currentTop < topTo - 100) {
+            animateScroll(kontaktMain, currentTop, topTo);
+        }
+    });
+    arrowDown.addEventListener("click", function () {
+        var topTo = uvodMain.offsetTop - 50;
+        var currentTop = getActualScrollTop();
+        if (currentTop > topTo + 100 || currentTop < topTo - 100) {
+            animateScroll(uvodMain, currentTop, topTo);
+        }
+    });
+    logo.addEventListener("click", function () {
+        var topTo = logo.offsetTop;
+        var currentTop = getActualScrollTop();
+        if (currentTop > topTo + 100 || currentTop < topTo - 100) {
+            window.scrollTo(0, 0);
+        }
+    });
+  
     
     // morePhotosButton.addEventListener("click", loadPictures);
-
-    
-
-    
 
     // function getActualScrollTop() {
     //     let actualTop = 0;

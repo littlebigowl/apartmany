@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
     console.log("DOM fully loaded and parsed");
 
+    document.getElementById("heading").innerText = "Ahoj";
+
     var pocetObrazkovNacitanie = 6;
     var celkovyPocetObrazkov = 12;
     var loadedPhotos = 0;

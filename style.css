@@ -190,11 +190,14 @@ body{
     text-align: center;
 }
 
+
+/* UVOD */
 #uvod{
     text-align: center;
 }
 
 
+/* CENNIK */
 #cennik, #hodnotenie{
     background: rgb(235, 233, 233);
 }
@@ -207,12 +210,10 @@ body{
     text-align: center;
     border-bottom: 1px solid #333;
 }
-
 .cennikByt{
     max-width: 600px;
     margin: 0 auto 40px auto; 
 }
-
 .polozkaCena{
     display: -webkit-box;
     display: -ms-flexbox;
@@ -255,6 +256,9 @@ body{
 .galeriaColumn img{
     width: 100%;
     margin-top: 5px;
+}
+.galeriaColumn img:hover{
+    cursor: pointer;
 }
 #galeriaRow:after{
     clear: both;
@@ -303,7 +307,6 @@ body{
     height: 95vh;
     /* border: 1px solid red; */
 }
-
 #galleryNav{
     position: absolute;
     bottom: 0px;
@@ -313,11 +316,9 @@ body{
     display: flex;
     text-align: center;
 
-    
     font-size: 30px;
     font-weight: 600;
 }
-
 .galleryNavigation{
     width: 50%;
     color: #eee;
@@ -328,7 +329,6 @@ body{
     -o-user-select: none;
     user-select: none;
 }
-
 .galleryNavigation:hover{
     cursor: pointer;
     color: #ffd500;
@@ -341,7 +341,7 @@ body{
 
 
 
-
+/* HODNOTENIE */
 #hodnotenieContainer{
     font-family: Georgia, 'Times New Roman', Times, serif;
     display: -webkit-box;
@@ -377,6 +377,8 @@ body{
     padding: 0 15px 0 0;
 }
 
+
+/* KONTAKT */
 #kontaktContainer{
     display: -webkit-box;
     display: -ms-flexbox;
@@ -394,12 +396,6 @@ body{
 #actualAdress{
     margin-bottom: 5px;
 }
-
-#map{
-    width: 100%;
-    height: 400px;
-}
-
 #mainSectionContainer #kontakt{
     padding-bottom: 50px;
 }
@@ -415,11 +411,15 @@ body{
 }
 
 
-
-.clear{
-    clear: both;
+/* MAP */
+#map{
+    width: 100%;
+    height: 400px;
 }
 
+
+
+/* FOOTER */
 footer{
     font-size: 12px;
     background: rgb(95, 95, 95);

@@ -48,12 +48,23 @@ document.addEventListener("DOMContentLoaded", function () {
   
 
     function changeHeading(){
-        document.getElementById("heading").innerText = "Ahoj";
+        openGalleryModal();
+        //document.getElementById("heading").innerText = "Ahoj";
     }
 
 
+    // OPEN GALLERY MODAL
+    function openGalleryModal(){
+        galleryModal.style.display = "block";
+        document.body.style.overflowY = "hidden";
+    }
+    // CLOSE GALLERY MODAL
+    function closeGalleryModal(){
+        galleryModal.style.display = "none";
+        document.body.style.overflowY = "auto";
+    }
 
-
+    crossCloseGalleryModal.addEventListener("click",closeGalleryModal);
 
 
     

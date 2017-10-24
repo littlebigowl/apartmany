@@ -18,13 +18,19 @@ body{
     overflow: hidden;
     width: 100%;
     margin: 0 auto;
+    left: 0;
+    right: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     background: rgba(0, 0, 0, 0.6);
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     position: fixed;
     z-index: 20;
     -moz-user-select: none;
     -ms-user-select: none;
+    -webkit-user-select: none;
     user-select: none;
 }
 
@@ -72,10 +78,19 @@ body{
     width: 100%;
     background-size: cover;
     background-position: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 #landingContainer{
@@ -126,7 +141,9 @@ body{
     background-position: center;
     background-repeat: no-repeat;
     left: 50%;
-    transform: translate(-50%);
+    -webkit-transform: translate(-50%);
+        -ms-transform: translate(-50%);
+            transform: translate(-50%);
     bottom: 2vh;
 
     border: 2px solid rgba(238, 238, 238, 0.705);
@@ -196,16 +213,20 @@ body{
 }
 
 .polozkaCena{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 .pocetOsob{
     width: 40%;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     padding-left: 10px;
 }
 .cena{
     width: 60%;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     text-align: center;
 }
 
@@ -240,12 +261,18 @@ body{
 
 #galeriaContainer{
     margin-bottom: 15px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-flow: row wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
 }
 
 .obrazokContainer{
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     width: calc(100%/3);
     padding: 0 0.6vh;
 }
@@ -305,6 +332,8 @@ body{
     position: absolute;
     bottom: 0px;
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     text-align: center;
 
@@ -336,14 +365,20 @@ body{
 
 #hodnotenieContainer{
     font-family: Georgia, 'Times New Roman', Times, serif;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
 }
 .samotneHodnotenie{
     margin-bottom: 20px;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     width: 50%;
     /* border: 1px solid red; */
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 .samotneHodnotenie blockquote{
@@ -360,13 +395,17 @@ body{
 }
 
 #kontaktContainer{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
 }
 .adressItem{
     width: 50%;
     margin-bottom: 1px;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     padding: 10px;
 }
 #actualAdress{
@@ -408,6 +447,8 @@ footer{
     max-width: 1000px;
     width: 60%;
     margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 #footerLeft{

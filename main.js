@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // LOADING PICTURES TO GALLERY
     function loadPictures() {
-        for (let i = 0; i < pocetObrazkovNacitanie; i++) {
+        for (var i = 0; i < pocetObrazkovNacitanie; i++) {
             if (loadedPhotos < celkovyPocetObrazkov) {
                 var div = document.createElement("div");
                 div.className = "obrazokContainer";
@@ -125,21 +125,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function loadPhotosToArray() {
         gallery = new Array(celkovyPocetObrazkov);
-        for (let i = 0; i < celkovyPocetObrazkov; i++) {
+        for (var i = 0; i < celkovyPocetObrazkov; i++) {
             gallery[i] = "images/photos/apartmany" + (i + 1) + ".jpeg";
         }
         countTotalPhotos.innerText = gallery.length;
     };
 
     function getIndexOfPhoto(idOfPhoto) {
-        let index = parseInt(idOfPhoto.split("_").pop());
+        var index = parseInt(idOfPhoto.split("_").pop());
         return index;
     };
 
     function openGallery(numberOfPhoto) {
         loadAndSetPhoto(numberOfPhoto);
 
-        let actualTopScroll = getActualScrollTop();
+        var actualTopScroll = getActualScrollTop();
         if (actualTopScroll > 0) {
             galleryModal.style.top = actualTopScroll + "px";
             galleryModal.style.display = "block";

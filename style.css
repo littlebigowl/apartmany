@@ -107,6 +107,7 @@ body{
     font-size: calc(32px + 1vw);
     font-weight: 600;
     color: #FFD700;
+    color: red;
 }
 
 #subHeading{

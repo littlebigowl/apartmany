@@ -29,32 +29,16 @@ document.addEventListener("DOMContentLoaded", function () {
     var countActualPhoto = document.getElementById("countActualPhoto");
 
     cennikNav.addEventListener("click", function () {
-        var topTo = cennikMain.offsetTop - 50;
-        var currentTop = getActualScrollTop();
-        if (currentTop > topTo + 100 || currentTop < topTo - 100) {
-            animateScroll(cennikMain, currentTop, topTo);
-        }
+        
     });
     galeriaNav.addEventListener("click", function () {
-        var topTo = galeriaMain.offsetTop - 50;
-        var currentTop = getActualScrollTop();
-        if (currentTop > topTo + 100 || currentTop < topTo - 100) {
-            animateScroll(galeriaMain, currentTop, topTo);
-        }
+        
     });
     kontaktNav.addEventListener("click", function () {
-        var topTo = kontaktMain.offsetTop - 50;
-        var currentTop = getActualScrollTop();
-        if (currentTop > topTo + 100 || currentTop < topTo - 100) {
-            animateScroll(kontaktMain, currentTop, topTo);
-        }
+        
     });
     arrowDown.addEventListener("click", function () {
-        var topTo = uvodMain.offsetTop - 50;
-        var currentTop = getActualScrollTop();
-        if (currentTop > topTo + 100 || currentTop < topTo - 100) {
-            animateScroll(uvodMain, currentTop, topTo);
-        }
+        
     });
     logo.addEventListener("click", function () {
         

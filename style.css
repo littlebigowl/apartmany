@@ -3,6 +3,7 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     /* border: 1px solid red;     */
 }
 
@@ -244,48 +245,23 @@ body{
 }
 
 
-#galeria button{
-    display: block;
-    margin: 0 auto;
-    border: 2px solid rgb(255, 213, 0);
-    background: rgba(255, 213, 0, 0.74);
-    padding: 8px 15px;
-    border-radius: 4px;
-    font-size: calc(12px + 0.2vw);
+/* GALERIA */
+.galeriaColumn{
+    float: left;
+    width: 25%;
+    padding: 0 5px;
+    /* border: 1px solid red; */
 }
-#galeria button:hover, #galeria button:active{
-    cursor: pointer;
-}
-
-
-
-#glaeriaSubContainer{
-    margin-bottom: 15px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
-}
-
-.obrazokContainer{
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    width: calc(100%/3);
-    padding: 0 0.6vh;
-}
-
-.obrazokContainer:hover{
-   cursor: pointer;
-}
-
-.galeriaObrazok{
+.galeriaColumn img{
     width: 100%;
-    
+    margin-top: 5px;
 }
-
+#galeriaRow:after{
+    clear: both;
+    content: "";
+    display: table;
+    /* border: 1px solid red; */
+}
 
 
 
@@ -362,6 +338,9 @@ body{
     color: #eee;
     background: rgba(0, 0, 0, 0.4);
 }
+
+
+
 
 #hodnotenieContainer{
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -532,9 +511,11 @@ footer{
         width: 80%;
     }
 
-    .obrazokContainer{
+    .galeriaColumn{
+        float: left;
         width: 50%;
     }
+
     .samotneHodnotenie{
         width: 100%;
     }

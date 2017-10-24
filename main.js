@@ -57,13 +57,25 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
     logo.addEventListener("click", function () {
-        var topTo = logo.offsetTop;
-        var currentTop = getActualScrollTop();
-        if (currentTop > topTo + 100 || currentTop < topTo - 100) {
-            window.scrollTo(0, 0);
-        }
+        // var topTo = logo.offsetTop;
+        // var currentTop = getActualScrollTop();
+        // if (currentTop > topTo + 100 || currentTop < topTo - 100) {
+        //     window.scrollTo(0, 0);
+        // }
+
+        changeHeading();
     });
   
+
+    function changeHeading(){
+        document.getElementById("heading").innerText = "Ahoj";
+    }
+
+
+
+
+
+
     
     // morePhotosButton.addEventListener("click", loadPictures);
 

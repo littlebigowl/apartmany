@@ -95,6 +95,10 @@ document.addEventListener("DOMContentLoaded", function () {
         return parseInt(x[1]);
     }
 
+    window.addEventListener("scroll",function(){
+        var x = getScrollTop();
+        console.log(x);
+    });
 
 
     // Get top before open modal and than scroll to after closing modal, because of position fixed during in modal
@@ -105,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
         updateModalCounting();
         galleryModal.style.top = helpTopForModal+"px";
         galleryModal.style.display = "block";
-        document.documentElement.style.overflow = "hidden";
+        document.documentElement.style.overflowY = "hidden";
         // document.documentElement.style.position = "fixed";
         document.body.scroll = "no";
         actualPhoto.appendChild(gallery[num-1]);
@@ -114,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function closeGalleryModal() {
         clearModal();
         galleryModal.style.display = "none";
-        document.documentElement.style.overflow = "auto";
+        document.documentElement.style.overflowY = "auto";
         // document.documentElement.style.position = "initial";
         document.body.scroll = "yes";
         setInitialZoom();

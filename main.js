@@ -57,12 +57,14 @@ document.addEventListener("DOMContentLoaded", function () {
     function openGalleryModal(){
         galleryModal.style.display = "block";
         document.documentElement.style.overflow = "hidden";
+        document.documentElement.style.position = "fixed";
         document.body.scroll = "no";
     }
     // CLOSE GALLERY MODAL
     function closeGalleryModal(){
         galleryModal.style.display = "none";
         document.documentElement.style.overflow = "auto";
+        document.documentElement.style.position = "initial";
         document.body.scroll = "yes";
     }
 

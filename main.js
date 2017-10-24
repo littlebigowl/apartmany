@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
     console.log("DOM fully loaded and parsed");
 
     document.getElementById("heading").innerText = "Ahoj";
+    document.getElementById("heading").style.color = "blue";
 
     var pocetObrazkovNacitanie = 6;
     var celkovyPocetObrazkov = 12;

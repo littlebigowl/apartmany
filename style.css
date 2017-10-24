@@ -381,7 +381,10 @@ body{
     display: -ms-flexbox;
     display: flex;
 }
-.samotneHodnotenie blockquote{
+.quoteHodnotenie{
+    width: 92%;
+}
+.quoteHodnotenie blockquote{
    padding: 10px 25px 0 10px;
 }
 .quoteSign{

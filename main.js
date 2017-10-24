@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var x = "ubytovna";
     var y = "humenne";
     var z = "gmail";
-    document.getElementById("actualEmail").innerText = x+y+"@"+z+".com";
+    document.getElementById("actualEmail").innerText = x + y + "@" + z + ".com";
 
     var cennikNav = document.getElementById("cennikNav");
     var galeriaNav = document.getElementById("galeriaNav");
@@ -29,70 +29,101 @@ document.addEventListener("DOMContentLoaded", function () {
     var countActualPhoto = document.getElementById("countActualPhoto");
 
     cennikNav.addEventListener("click", function () {
-        
+
     });
     galeriaNav.addEventListener("click", function () {
-        
+
     });
     kontaktNav.addEventListener("click", function () {
-        
+
     });
     arrowDown.addEventListener("click", function () {
-        
+
     });
     logo.addEventListener("click", function () {
-        
+
         window.scrollTo(0, 0)
         changeHeading();
     });
-  
 
-    function changeHeading(){
-        //document.getElementById("heading").innerText = "Ahoj";
+
+
+    // LOAD and SET ALL IMAGES IN GALLERY
+    var totalPhotosToLoadToGallery = 23;
+    var gallery = new Array();
+    function setPhotos() {
+
+        var image = new Image();
+        image.src = "images/photos/apartmany2.jpg";
+        image.className = "photo imageGallery";
+        image.id = "photo_"+1;
+
+        for (var i = 0; i < totalPhotosToLoadToGallery; i++) {
+            var image = new Image();
+            image.src = "images/photos/apartmany"+(i+1)+".jpg";
+            image.alt = "apartmany " + (i+1);
+            image.className = "imageGallery";
+            image.id = "photo_"+(i+1);
+            gallery[i] = image;
+            console.log(image);
+        }
+        document.getElementById("galeria").appendChild(gallery[3]);
     }
+    setPhotos();
 
 
-    document.getElementById("photo1").addEventListener("click",function(){
-        
+
+    document.getElementById("photo1").addEventListener("click", function () {
         openGalleryModal();
-        document.getElementById("heading").innerText = "Ahoj";
-        document.getElementById("subHeading").innerText = getScrollTop();
-
     });
+
 
     var helpTopForModal = 0;
     // OPEN GALLERY MODAL
-    function openGalleryModal(){
+    function openGalleryModal() {
         helpTopForModal = getScrollTop();
+        updateModalCounting();
         galleryModal.style.display = "block";
         document.documentElement.style.overflow = "hidden";
         document.documentElement.style.position = "fixed";
         document.body.scroll = "no";
     }
     // CLOSE GALLERY MODAL
-    function closeGalleryModal(){
+    function closeGalleryModal() {
         galleryModal.style.display = "none";
         document.documentElement.style.overflow = "auto";
         document.documentElement.style.position = "initial";
         document.body.scroll = "yes";
-        window.scrollTo(0,helpTopForModal);
+        window.scrollTo(0, helpTopForModal);
+    }
+    // CLOSING MODAL BY CLICKING ON CROSS
+    crossCloseGalleryModal.addEventListener("click", closeGalleryModal);
+
+    // UPDATE COUNTING IN GALLERY MODAL
+    var actualPhotoNumber = 0;
+    var totalPhotoCounting = 0;
+    function updateModalCounting() {
+        countActualPhoto.innerText = actualPhotoNumber;
+        countTotalPhotos.innerText = totalPhotoCounting;
     }
 
-    crossCloseGalleryModal.addEventListener("click",closeGalleryModal);
+
+
+
 
 
     // SCROLL POSITION
-    function getScrollTop(){
+    function getScrollTop() {
         var supportPageOffset = window.pageXOffset !== undefined;
         var isCSS1Compat = ((document.compatMode || "") === "CSS1Compat");
-        
+
         var y = supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop;
         return parseInt(y);
     }
-    
 
 
-    
+
+
     // morePhotosButton.addEventListener("click", loadPictures);
 
     // function getActualScrollTop() {

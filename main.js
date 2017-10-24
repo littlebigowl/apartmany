@@ -48,10 +48,11 @@ document.addEventListener("DOMContentLoaded", function () {
   
 
     function changeHeading(){
-        openGalleryModal();
         //document.getElementById("heading").innerText = "Ahoj";
     }
 
+
+    document.getElementById("photo1").addEventListener("click",openGalleryModal);
 
     // OPEN GALLERY MODAL
     function openGalleryModal(){

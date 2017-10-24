@@ -69,11 +69,13 @@ document.addEventListener("DOMContentLoaded", function () {
         window.scrollTo(0,0);
     });
 
-    window.addEventListener("scroll", function () {
-        if (getActualScrollTop() > kontaktMain.offsetTop - 500) {
-            document.getElementById("actualEmail").innerText = "ubytovnahumenne@gmail.com";
-        }
-    });
+    
+    // SHOW EMAIL
+    var x = "ubytovna";
+    var y = "humenne";
+    var z = "gmail";
+    document.getElementById("actualEmail").innerText = x+y+"@"+z+".com";
+
 
     morePhotosButton.addEventListener("click", loadPictures);
 

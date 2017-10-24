@@ -81,29 +81,29 @@ document.addEventListener("DOMContentLoaded", function () {
         return actualTop;
     }
 
-    // ANIMATION SCROLL TO
-    function animateScroll(elem, from, to) {
-        if (!elem || elem.classList.contains("clicked")) {
-            console.log("returned animation");
-            return;
-        }
-        elem.className += "clicked";
+    // // ANIMATION SCROLL TO
+    // function animateScroll(elem, from, to) {
+    //     if (!elem || elem.classList.contains("clicked")) {
+    //         console.log("returned animation");
+    //         return;
+    //     }
+    //     elem.className += "clicked";
 
-        var fps = 50;
-        var step = 50;
-        if (from > to) {
-            step *= -1;
-        }
-        var numberOfSteps = (to - from) / step;
-        var progress = 0;
-        timer = setInterval(function () {
-            window.scrollTo(0, getActualScrollTop() + step);
+    //     var fps = 50;
+    //     var step = 50;
+    //     if (from > to) {
+    //         step *= -1;
+    //     }
+    //     var numberOfSteps = (to - from) / step;
+    //     var progress = 0;
+    //     timer = setInterval(function () {
+    //         window.scrollTo(0, getActualScrollTop() + step);
 
-            progress++;
-            if (progress > numberOfSteps) {
-                clearInterval(timer);
-                elem.className = "";
-            }
-        }, 1000 / fps);
-    }
+    //         progress++;
+    //         if (progress > numberOfSteps) {
+    //             clearInterval(timer);
+    //             elem.className = "";
+    //         }
+    //     }, 1000 / fps);
+    // }
 });

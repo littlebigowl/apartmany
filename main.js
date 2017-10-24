@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
             gallery[i] = image;
             console.log(image);
         }
-        document.getElementById("galeria").appendChild(gallery[3]);
+        document.getElementById("actualPhoto").appendChild(gallery[17]);
     }
     setPhotos();
 

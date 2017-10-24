@@ -301,11 +301,18 @@ body{
     background: rgba(0, 0, 0, 0.6);
     z-index: 105;
 }
-
+.imageGallery{
+    max-width: 100%;
+    /* max-height: 100%; */
+    object-fit: contain;
+}
 #actualPhoto{
+    margin: 0 auto;
     width: 95%;
-    height: 95vh;
+    height: 100vh;
     /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
 }
 #galleryNav{
     position: absolute;
@@ -332,7 +339,7 @@ body{
 .galleryNavigation:hover{
     cursor: pointer;
     color: #ffd500;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.5);
 }
 .galleryNavigation:focus{
     color: #eee;

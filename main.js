@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
         changeHeading();
     });
 
-
+    
 
     // LOAD and SET ALL IMAGES IN GALLERY
     var totalPhotosToLoadToGallery = 23;
@@ -65,43 +65,72 @@ document.addEventListener("DOMContentLoaded", function () {
             image.className = "imageGallery";
             image.id = "photo_"+(i+1);
             gallery[i] = image;
-            console.log(image);
         }
-        document.getElementById("actualPhoto").appendChild(gallery[17]);
     }
     setPhotos();
 
+    // ADD CLICK EVENT FOR PHOTOS ON PAGE
+    function addClickEventToPhotos(){
+        var photos = document.getElementsByClassName("photo");
+        for(var i = 0; i<photos.length; i++){
+            var idOfPhoto = getNumberFromId(photos[i].id);
+            actualPhotoNumber = idOfPhoto;
+            
+            photos[i].addEventListener("click",function(){
+                var str = getNumberFromId(this.id);
+                actualPhotoNumber = str;
+                openGalleryModal(str);
+            });
+            
+        }
+    
+    }
+    addClickEventToPhotos();
 
 
-    document.getElementById("photo1").addEventListener("click", function () {
-        openGalleryModal();
-    });
+    // GET number of photo FROM ID
+    function getNumberFromId(str){
+        var helpStr = ""+ str;
+        var x = str.split("_")
+        return parseInt(x[1]);
+    }
 
 
+
+    // Get top before open modal and than scroll to after closing modal, because of position fixed during in modal
     var helpTopForModal = 0;
     // OPEN GALLERY MODAL
-    function openGalleryModal() {
+    function openGalleryModal(num) {
         helpTopForModal = getScrollTop();
         updateModalCounting();
         galleryModal.style.display = "block";
         document.documentElement.style.overflow = "hidden";
         document.documentElement.style.position = "fixed";
         document.body.scroll = "no";
+        actualPhoto.appendChild(gallery[num-1]);
     }
     // CLOSE GALLERY MODAL
     function closeGalleryModal() {
+        clearModal();
         galleryModal.style.display = "none";
         document.documentElement.style.overflow = "auto";
         document.documentElement.style.position = "initial";
         document.body.scroll = "yes";
+        
         window.scrollTo(0, helpTopForModal);
     }
     // CLOSING MODAL BY CLICKING ON CROSS
     crossCloseGalleryModal.addEventListener("click", closeGalleryModal);
+    // CLEAR ALL CHILDS FROM MODAL
+    function clearModal(){
+        while(actualPhoto.firstChild){
+            actualPhoto.removeChild(actualPhoto.firstChild);
+        }
+    }
 
     // UPDATE COUNTING IN GALLERY MODAL
     var actualPhotoNumber = 0;
-    var totalPhotoCounting = 0;
+    var totalPhotoCounting = totalPhotosToLoadToGallery;
     function updateModalCounting() {
         countActualPhoto.innerText = actualPhotoNumber;
         countTotalPhotos.innerText = totalPhotoCounting;

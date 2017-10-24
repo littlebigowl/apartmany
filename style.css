@@ -3,7 +3,8 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     /* border: 1px solid red;     */
 }
 
@@ -304,15 +305,20 @@ body{
 .imageGallery{
     max-width: 100%;
     /* max-height: 100%; */
-    object-fit: contain;
+    -o-object-fit: contain;
+       object-fit: contain;
 }
 #actualPhoto{
     margin: 0 auto;
     width: 98%;
     height: 100vh;
     /* border: 1px solid red; */
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 #galleryNav{
     position: absolute;
@@ -374,7 +380,8 @@ body{
 }
 .quoteSign{
     text-align: right;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     font-size: 60px;
     margin-top: -15px;
     width: 8%;

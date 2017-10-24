@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.documentElement.style.overflow = "auto";
         document.documentElement.style.position = "initial";
         document.body.scroll = "yes";
-        
+        setInitialZoom();
         window.scrollTo(0, helpTopForModal);
     }
     // CLOSING MODAL BY CLICKING ON CROSS
@@ -126,6 +126,13 @@ document.addEventListener("DOMContentLoaded", function () {
         while(actualPhoto.firstChild){
             actualPhoto.removeChild(actualPhoto.firstChild);
         }
+    }
+    // SET BASIC ZOOM
+    var scale = "scale(1)";
+    function setInitialZoom(){
+        document.body.style.webkitTransform = scale;
+        document.body.style.msTransform = scale;
+        document.body.style.transform = scale;
     }
 
     // UPDATE COUNTING IN GALLERY MODAL

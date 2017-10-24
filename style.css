@@ -389,6 +389,7 @@ body{
     border: 1px solid red;
     font-size: 60px;
     margin-top: -15px;
+    width: 8%;
 }
 .menoHodnotenie{
     text-align: right;

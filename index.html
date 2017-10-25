@@ -334,20 +334,7 @@
 
     <!-- GOOGLE MAPS -->
     <script>
-        function initMap() {
-            var options = {
-                zoom: 17,
-                center: { lat: 48.933567, lng: 21.907837 }
-            }
-            // new map
-            var map = new google.maps.Map(document.getElementById("map"), options);
-
-            // add marker
-            var marker = new google.maps.Marker({
-                position: { lat: 48.933567, lng: 21.907837 },
-                map: map
-            });
-        }
+        function initMap(){var e={zoom:17,center:{lat:48.933567,lng:21.907837}},n=new google.maps.Map(document.getElementById("map"),e);new google.maps.Marker({position:{lat:48.933567,lng:21.907837},map:n})}
     </script>
 
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSeWcGwiJhXeoDuS8S1PQVXCHnlGbyAIs&callback=initMap">

@@ -148,27 +148,28 @@ document.addEventListener("DOMContentLoaded", function () {
     // MODAL GALLERY MOVE RIGHT
     function moveGalleryRight(){
         clearModal();
-        actualPhoto.appendChild(gallery[lodedImageInGalleryIndexInArray+1]);
-    
         lodedImageInGalleryIndexInArray++;
+        if(lodedImageInGalleryIndexInArray>=gallery.length){
+            lodedImageInGalleryIndexInArray = 0;
+        }
+        actualPhoto.appendChild(gallery[lodedImageInGalleryIndexInArray]);
         actualPhotoNumber = lodedImageInGalleryIndexInArray+1;
         updateModalCounting();
-        if(lodedImageInGalleryIndexInArray>=gallery.length-1){
-            lodedImageInGalleryIndexInArray = -1;
-        }
+        
     }
     // ADD CLCIK EVENT MODAL MOVE RIGHT
     galleryNavRight.addEventListener("click",moveGalleryRight);
     // MODAL GALLERY MOVE LEFT
     function moveGalleryLeft(){
         clearModal();
-        actualPhoto.appendChild(gallery[lodedImageInGalleryIndexInArray-1]);
         lodedImageInGalleryIndexInArray--;
+        if(lodedImageInGalleryIndexInArray<0){
+            lodedImageInGalleryIndexInArray = gallery.length-1;
+        }
+        actualPhoto.appendChild(gallery[lodedImageInGalleryIndexInArray]);
         actualPhotoNumber = lodedImageInGalleryIndexInArray+1;
         updateModalCounting();
-        if(lodedImageInGalleryIndexInArray<1){
-            lodedImageInGalleryIndexInArray = gallery.length;
-        }
+        
     }
     // ADD CLICK EVENT MODAL MOVE LEFT
     galleryNavLeft.addEventListener("click",moveGalleryLeft);

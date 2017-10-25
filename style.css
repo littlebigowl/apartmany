@@ -25,7 +25,7 @@ body{
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.75);
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     position: fixed;
@@ -43,6 +43,8 @@ body{
     color: rgb(219, 1, 1);
 }
 
+
+/* PAGE NAVIGATION */
 #logo{
     width: 10%;
     background: url("logo.png") center center no-repeat;
@@ -56,15 +58,12 @@ body{
     width: 30%;
     text-align: center;
 }
-
 .navItem:hover{
     cursor: pointer;
     color: #FFD700; 
 }
-
-
 #myNav a{
-    font-size: calc(20px + 0.3vw);
+    font-size: 26px;;
     text-decoration: none;
     color: #eee; 
 }
@@ -74,6 +73,7 @@ body{
 }
 
 
+/* LAND PAGE HEADING */
 #mainHeader{
     background-image: url("images/bg3.jpeg");
     height: 100vh;
@@ -94,39 +94,30 @@ body{
         -ms-flex-align: center;
             align-items: center;
 }
-
 #landingContainer{
-    /* background: rgba(0, 0, 0, 0.7); */
     padding: 10px 35px;
-    border-radius: 5px;
     color: #fff;
     text-align: center;
     margin-bottom: 10vh;
 }
-
-
 #heading{
-    font-size: calc(32px + 1vw);
+    font-size: 52px;
     font-weight: 600;
     color: #FFD700;
 }
-
 #subHeading{
-    font-size: calc(16px + 0.7vw);
+    font-size: 24px;
 }
-
 #reservation{
     text-align: center;
-    font-size: calc(24px + 0.7vw);
+    font-size: 38px;
     font-weight: 600;
     color: #eee;
     z-index: 1;
 }
-
 #price{
     color: #FFD700;
 }
-
 #phoneLandingPage{
     background: rgba(255, 215, 0, 0.7);
     border-radius: 5px;
@@ -134,7 +125,6 @@ body{
     margin-top: 10px;
     
 }
-
 #arrowDown{
     position: absolute;
     width: 44px;
@@ -157,22 +147,22 @@ body{
     -o-user-select: none;
     user-select: none;
 }
-
 #arrowDown:hover{
     border: 2px solid #FFD700;
     cursor: pointer;
 }
 
+
+/* MAIN SECTION */
 #mainSectionContainer{
     background: rgb(250, 250, 250);
     color: #333;
 }
-
 .sectionContainer{
     max-width: 1000px;
     width: 60%;
     margin: 0 auto;
-    font-size: calc(16px + 0.2vw);
+    font-size: 20px;
 }
 
 #mainSectionContainer section{
@@ -185,7 +175,7 @@ body{
 
 #mainSectionContainer section .sectionHeading{
     font-weight: 600;
-    font-size: calc(20px + 0.4vw);
+    font-size: 26px;
     text-transform: uppercase;
     padding: 0px 0 30px 0;
     text-align: center;
@@ -240,10 +230,12 @@ body{
 .normalnaCena{
     text-decoration: line-through;
 }
-
+#cenaDodatok{
+    padding-top: 10px;
+}
 #cenaDodatok p{
-    margin-bottom: 8px;
-    font-size: calc(16px + 0.1vw);
+    margin-bottom: 6px;
+    font-size:18px;
 }
 
 
@@ -270,7 +262,7 @@ body{
 
 
 
-
+/* GALLERY MODAL */
 #galleryModal{
     position: absolute;
     height: 100vh;
@@ -329,14 +321,13 @@ body{
     display: -ms-flexbox;
     display: flex;
     
-
     font-size: 40px;
     font-weight: 600;
 }
 .galleryNavigation{
     width: 50%;
     color: #eee;
-    background: rgba(0, 0, 0, 0);
+    /* background: rgba(0, 0, 0, 0); */
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -351,8 +342,6 @@ body{
 #galleryNavRight span{
     text-align: right;
 }
-
-
 .galleryNavigation:hover{
     cursor: pointer;
     color: #ffd500;
@@ -412,6 +401,13 @@ body{
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     padding: 10px;
+
+    /* border: 1px solid red; */
+}
+.adressItemHead{
+    text-align: center;
+    border-bottom: 1px solid #333;
+    margin-bottom: 10px; 
 }
 #actualAdress{
     margin-bottom: 5px;
@@ -423,11 +419,14 @@ body{
     margin-bottom: 10px;
 }
 #odkazNaMapy a{
-    background: #333;
-    color: #ffd500;
+    background: #ffe044;
+    color: #333;
     border-radius: 4px;
     padding: 3px 10px;
     text-decoration: none;
+}
+#odkazNaMapy a:hover{
+    background: #ffd311;
 }
 
 
@@ -484,58 +483,53 @@ footer{
 
 
 @media (max-width: 1000px){
+    #myNav a{
+        font-size: 24px;;
+    }
     #landingContainer{ 
         padding: 10px 20px;  
     }
-
     #heading{
-        /* font-size: calc(16px + 1.8vw); */
+        font-size: 42px;
         line-height: 1.3;
         margin-bottom: 10px;
-        font-weight: 600;    
     }
-
     #reservation{
-        text-align: center;
         font-size: calc(20px + 1vw);
-        font-weight: 600;
-        color: #eee;
     }
-
-    .sectionContainer, #footerContainer{
+    .sectionContainer{
         width: 80%;
+        font-size: 18px;
     }
     #kontaktAdresa,#kontaktFormular{
         width: 100%;
     }
+    #footerContainer{
+        width: 90%;
+    }
+    
 }
 
 @media (max-width: 678px){
-
-    #landingContainer{ 
-        padding: 10px 20px;  
+    #myNav a{
+        font-size: 20px;
     }
-
     #heading{
-        /* font-size: calc(16px + 1.8vw); */
-        line-height: 1.3;
-        margin-bottom: 10px;
-        font-weight: 600;    
+        font-size: 38px;
     }
-
-    #reservation{
-        font-size: calc(20px + 1vw);
+    #subHeading{
+        font-size: 20px;
     }
-
-    .sectionContainer, #footerContainer{
-        width: 80%;
+    #mainSectionContainer section .sectionHeading{
+        font-size: 22px;
     }
-
+    #cenaDodatok p{
+        margin-bottom: 6px;
+        font-size: 16px;
+    }
     .galeriaColumn{
-        float: left;
         width: 50%;
     }
-
     .samotneHodnotenie{
         width: 100%;
     }
@@ -559,10 +553,8 @@ footer{
         font-size: 14px;
     }
     #cenaDodatok p{
-        margin-bottom: 8px;
-        font-size: 16px;
+        font-size: 15px;
     }
-    .obrazokContainer{
-        width: 50%;
-    }
+    
+
 }

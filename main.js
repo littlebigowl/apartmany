@@ -101,19 +101,17 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    // Get top before open modal and than scroll to after closing modal, because of position fixed during in modal
-    var helpTopForModal = 0;
+   
     // OPEN GALLERY MODAL
     function openGalleryModal(num) {
         helpTopForModal = getScrollTop();
         updateModalCounting();
-
         galleryModal.style.position = "fixed";
         galleryModal.style.display = "block";
         document.documentElement.style.overflowY = "hidden";
-        
         document.body.scroll = "no";
-        actualPhoto.appendChild(gallery[num-1]);
+        lodedImageInGalleryIndexInArray = num-1;
+        actualPhoto.appendChild(gallery[lodedImageInGalleryIndexInArray]);
     }
     // CLOSE GALLERY MODAL
     function closeGalleryModal() {
@@ -140,16 +138,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // UPDATE COUNTING IN GALLERY MODAL
     var actualPhotoNumber = 0;
-    var totalPhotoCounting = totalPhotosToLoadToGallery;
     function updateModalCounting() {
         countActualPhoto.innerText = actualPhotoNumber;
-        countTotalPhotos.innerText = totalPhotoCounting;
+        countTotalPhotos.innerText = totalPhotosToLoadToGallery;
     }
 
 
-
-
-
+    var lodedImageInGalleryIndexInArray = 0;
+    // MODAL GALLERY MOVE RIGHT
+    function moveGalleryRight(){
+        clearModal();
+        actualPhoto.appendChild(gallery[lodedImageInGalleryIndexInArray+1]);
+    
+        lodedImageInGalleryIndexInArray++;
+        actualPhotoNumber = lodedImageInGalleryIndexInArray+1;
+        updateModalCounting();
+        if(lodedImageInGalleryIndexInArray>=gallery.length-1){
+            lodedImageInGalleryIndexInArray = -1;
+        }
+    }
+    // ADD CLCIK EVENT MODAL MOVE RIGHT
+    galleryNavRight.addEventListener("click",moveGalleryRight);
+    // MODAL GALLERY MOVE LEFT
+    function moveGalleryLeft(){
+        clearModal();
+        actualPhoto.appendChild(gallery[lodedImageInGalleryIndexInArray-1]);
+        lodedImageInGalleryIndexInArray--;
+        actualPhotoNumber = lodedImageInGalleryIndexInArray+1;
+        updateModalCounting();
+        if(lodedImageInGalleryIndexInArray<1){
+            lodedImageInGalleryIndexInArray = gallery.length;
+        }
+    }
+    // ADD CLICK EVENT MODAL MOVE LEFT
+    galleryNavLeft.addEventListener("click",moveGalleryLeft);
 
     // SCROLL POSITION
     function getScrollTop() {

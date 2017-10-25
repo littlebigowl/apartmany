@@ -107,10 +107,12 @@ document.addEventListener("DOMContentLoaded", function () {
     function openGalleryModal(num) {
         helpTopForModal = getScrollTop();
         updateModalCounting();
-        galleryModal.style.top = helpTopForModal+"px";
+        // galleryModal.style.top = helpTopForModal+"px";
+        console.log(galleryModal.offsetTop);
         galleryModal.style.display = "block";
         document.documentElement.style.overflowY = "hidden";
-        // document.documentElement.style.position = "fixed";
+        galleryModal.style.position = "fixed";
+        console.log(galleryModal.offsetTop);
         document.body.scroll = "no";
         actualPhoto.appendChild(gallery[num-1]);
     }
@@ -119,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
         clearModal();
         galleryModal.style.display = "none";
         document.documentElement.style.overflowY = "auto";
-        // document.documentElement.style.position = "initial";
+        // galleryModal.style.position = "absolute";
         document.body.scroll = "yes";
         setInitialZoom();
         window.scrollTo(0, helpTopForModal);

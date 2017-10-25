@@ -186,6 +186,16 @@ body{
 #uvod{
     text-align: center;
 }
+#iconContainer{
+    margin-top: 30px;
+    /* border: 1px solid red; */
+}
+#iconContainer img{
+    height: 50px;
+    padding: 5px 15px;
+    /* border: 1px solid red; */
+}
+
 
 
 /* CENNIK */
@@ -258,6 +268,10 @@ body{
     content: "";
     display: table;
     /* border: 1px solid red; */
+}
+#galeriaHelpText{
+    margin-bottom: 10px;
+    text-align: center;
 }
 
 
@@ -422,7 +436,7 @@ body{
     background: #ffe044;
     color: #333;
     border-radius: 4px;
-    padding: 3px 10px;
+    padding: 2px 7px;
     text-decoration: none;
 }
 #odkazNaMapy a:hover{
@@ -520,6 +534,10 @@ footer{
     #subHeading{
         font-size: 20px;
     }
+    #iconContainer img{
+        height: 44px;
+        padding: 5px 8px;
+    }
     #mainSectionContainer section .sectionHeading{
         font-size: 22px;
     }
@@ -556,5 +574,8 @@ footer{
         font-size: 15px;
     }
     
-
+    #iconContainer img{
+        height: 40px;
+        padding: 5px 3px;
+    }
 }

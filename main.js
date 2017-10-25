@@ -28,25 +28,24 @@ document.addEventListener("DOMContentLoaded", function () {
     var countTotalPhotos = document.getElementById("countTotalPhotos");
     var countActualPhoto = document.getElementById("countActualPhoto");
 
+    var ofsetTop = 50;
     cennikNav.addEventListener("click", function () {
-
+        animateScroll(cennikMain, cennikMain.offsetTop - ofsetTop);
     });
     galeriaNav.addEventListener("click", function () {
-
+        animateScroll(galeriaMain, galeriaMain.offsetTop - ofsetTop);
     });
     kontaktNav.addEventListener("click", function () {
-
+        animateScroll(kontaktMain, kontaktMain.offsetTop - ofsetTop);
     });
     arrowDown.addEventListener("click", function () {
-
+        animateScroll(uvodMain, uvodMain.offsetTop - ofsetTop);
     });
     logo.addEventListener("click", function () {
-
-        window.scrollTo(0, 0)
-        changeHeading();
+        window.scrollTo(0, 0)     
     });
 
-    
+
 
     // LOAD and SET ALL IMAGES IN GALLERY
     var totalPhotosToLoadToGallery = 23;
@@ -56,52 +55,46 @@ document.addEventListener("DOMContentLoaded", function () {
         var image = new Image();
         image.src = "images/photos/apartmany2.jpg";
         image.className = "photo imageGallery";
-        image.id = "photo_"+1;
+        image.id = "photo_" + 1;
 
         for (var i = 0; i < totalPhotosToLoadToGallery; i++) {
             var image = new Image();
-            image.src = "images/photos/apartmany"+(i+1)+".jpg";
-            image.alt = "apartmany " + (i+1);
+            image.src = "images/photos/apartmany" + (i + 1) + ".jpg";
+            image.alt = "apartmany " + (i + 1);
             image.className = "imageGallery";
-            image.id = "photo_"+(i+1);
+            image.id = "photo_" + (i + 1);
             gallery[i] = image;
         }
     }
     setPhotos();
 
     // ADD CLICK EVENT FOR PHOTOS ON PAGE
-    function addClickEventToPhotos(){
+    function addClickEventToPhotos() {
         var photos = document.getElementsByClassName("photo");
-        for(var i = 0; i<photos.length; i++){
+        for (var i = 0; i < photos.length; i++) {
             var idOfPhoto = getNumberFromId(photos[i].id);
             actualPhotoNumber = idOfPhoto;
-            
-            photos[i].addEventListener("click",function(){
+
+            photos[i].addEventListener("click", function () {
                 var str = getNumberFromId(this.id);
                 actualPhotoNumber = str;
                 openGalleryModal(str);
             });
-            
+
         }
-    
+
     }
     addClickEventToPhotos();
 
 
     // GET number of photo FROM ID
-    function getNumberFromId(str){
-        var helpStr = ""+ str;
+    function getNumberFromId(str) {
+        var helpStr = "" + str;
         var x = str.split("_")
         return parseInt(x[1]);
     }
 
-    window.addEventListener("scroll",function(){
-        var x = getScrollTop();
-        console.log(x);
-    });
 
-
-   
     // OPEN GALLERY MODAL
     function openGalleryModal(num) {
         helpTopForModal = getScrollTop();
@@ -110,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
         galleryModal.style.display = "block";
         document.documentElement.style.overflowY = "hidden";
         document.body.scroll = "no";
-        lodedImageInGalleryIndexInArray = num-1;
+        lodedImageInGalleryIndexInArray = num - 1;
         actualPhoto.appendChild(gallery[lodedImageInGalleryIndexInArray]);
     }
     // CLOSE GALLERY MODAL
@@ -123,14 +116,14 @@ document.addEventListener("DOMContentLoaded", function () {
     // CLOSING MODAL BY CLICKING ON CROSS
     crossCloseGalleryModal.addEventListener("click", closeGalleryModal);
     // CLEAR ALL CHILDS FROM MODAL
-    function clearModal(){
-        while(actualPhoto.firstChild){
+    function clearModal() {
+        while (actualPhoto.firstChild) {
             actualPhoto.removeChild(actualPhoto.firstChild);
         }
     }
     // SET BASIC ZOOM
     var scale = "scale(1)";
-    function setInitialZoom(){
+    function setInitialZoom() {
         document.body.style.webkitTransform = scale;
         document.body.style.msTransform = scale;
         document.body.style.transform = scale;
@@ -146,33 +139,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
     var lodedImageInGalleryIndexInArray = 0;
     // MODAL GALLERY MOVE RIGHT
-    function moveGalleryRight(){
+    function moveGalleryRight() {
         clearModal();
         lodedImageInGalleryIndexInArray++;
-        if(lodedImageInGalleryIndexInArray>=gallery.length){
+        if (lodedImageInGalleryIndexInArray >= gallery.length) {
             lodedImageInGalleryIndexInArray = 0;
         }
         actualPhoto.appendChild(gallery[lodedImageInGalleryIndexInArray]);
-        actualPhotoNumber = lodedImageInGalleryIndexInArray+1;
+        actualPhotoNumber = lodedImageInGalleryIndexInArray + 1;
         updateModalCounting();
-        
+
     }
     // ADD CLCIK EVENT MODAL MOVE RIGHT
-    galleryNavRight.addEventListener("click",moveGalleryRight);
+    galleryNavRight.addEventListener("click", moveGalleryRight);
     // MODAL GALLERY MOVE LEFT
-    function moveGalleryLeft(){
+    function moveGalleryLeft() {
         clearModal();
         lodedImageInGalleryIndexInArray--;
-        if(lodedImageInGalleryIndexInArray<0){
-            lodedImageInGalleryIndexInArray = gallery.length-1;
+        if (lodedImageInGalleryIndexInArray < 0) {
+            lodedImageInGalleryIndexInArray = gallery.length - 1;
         }
         actualPhoto.appendChild(gallery[lodedImageInGalleryIndexInArray]);
-        actualPhotoNumber = lodedImageInGalleryIndexInArray+1;
+        actualPhotoNumber = lodedImageInGalleryIndexInArray + 1;
         updateModalCounting();
-        
+
     }
     // ADD CLICK EVENT MODAL MOVE LEFT
-    galleryNavLeft.addEventListener("click",moveGalleryLeft);
+    galleryNavLeft.addEventListener("click", moveGalleryLeft);
 
     // SCROLL POSITION
     function getScrollTop() {
@@ -185,46 +178,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
-    // morePhotosButton.addEventListener("click", loadPictures);
-
-    // function getActualScrollTop() {
-    //     let actualTop = 0;
-    //     if (document.documentElement.scrollTop > 0) {
-    //         actualTop = document.documentElement.scrollTop;
-    //     }
-    //     if (document.body.scrollTop > 0) {
-    //         actualTop = document.body.scrollTop;
-    //     }
-    //     if(window.scrollY > 0){
-    //         actualTop = window.scrollY;
-    //     }
-    //     return actualTop;
-    // }
-
+    var speedOfScrolling = 70;
     // ANIMATION SCROLL TO
-    // function animateScroll(elem, from, to) {
-    //     if (!elem || elem.classList.contains("clicked")) {
-    //         console.log("returned animation");
-    //         return;
-    //     }
-    //     elem.className += "clicked";
+    function animateScroll(elem, scrollTo) {
+        if(scrollTo != getScrollTop()){
+            if (!elem || elem.classList.contains("clicked")) {
+                console.log("returned animation");
+                return;
+            }
+            elem.className = "clicked";
+            var actualPosition = getScrollTop();
+            timer = setInterval(function(){
+                // MOVING DOWN
+                if(getScrollTop()<scrollTo){
+                    if(getScrollTop()+speedOfScrolling<scrollTo){
+                        window.scrollTo(0,getScrollTop()+speedOfScrolling);
+                    }else{
+                        window.scrollTo(0,scrollTo);
+                        clearInterval(timer);
+                        elem.className = "";
+                    }
+                }
+                // MOVING UP
+                if(getScrollTop()>scrollTo){
+                    if(getScrollTop()-speedOfScrolling>scrollTo){
+                        window.scrollTo(0,getScrollTop()-speedOfScrolling);
+                    }else{
+                        window.scrollTo(0, scrollTo);
+                        clearInterval(timer);
+                        elem.className = "";
+                    }
+                }
+            },20);
+        }
+    }
+    
 
-    //     var fps = 50;
-    //     var step = 50;
-    //     if (from > to) {
-    //         step *= -1;
-    //     }
-    //     var numberOfSteps = (to - from) / step;
-    //     var progress = 0;
-    //     timer = setInterval(function () {
-    //         window.scrollTo(0, getActualScrollTop() + step);
-
-    //         progress++;
-    //         if (progress > numberOfSteps) {
-    //             clearInterval(timer);
-    //             elem.className = "";
-    //         }
-    //     }, 1000 / fps);
-    // }
 });

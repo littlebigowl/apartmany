@@ -107,12 +107,11 @@ document.addEventListener("DOMContentLoaded", function () {
     function openGalleryModal(num) {
         helpTopForModal = getScrollTop();
         updateModalCounting();
-        // galleryModal.style.top = helpTopForModal+"px";
-        console.log(galleryModal.offsetTop);
+
+        galleryModal.style.position = "fixed";
         galleryModal.style.display = "block";
         document.documentElement.style.overflowY = "hidden";
-        galleryModal.style.position = "fixed";
-        console.log(galleryModal.offsetTop);
+        
         document.body.scroll = "no";
         actualPhoto.appendChild(gallery[num-1]);
     }
@@ -121,10 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
         clearModal();
         galleryModal.style.display = "none";
         document.documentElement.style.overflowY = "auto";
-        // galleryModal.style.position = "absolute";
         document.body.scroll = "yes";
-        setInitialZoom();
-        window.scrollTo(0, helpTopForModal);
     }
     // CLOSING MODAL BY CLICKING ON CROSS
     crossCloseGalleryModal.addEventListener("click", closeGalleryModal);

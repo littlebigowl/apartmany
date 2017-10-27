@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Apartmány Humenné</title>
+    <title>Apartmány Humenné - Dostupné ubytovanie v centre mesta</title>
+    <meta name="description" content="Kvalitné a cenovo dostupné ubytovanie v nových apartmánoch v centre mesta.">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="favicon.png" type="image/png">
 </head>
@@ -30,7 +31,7 @@
 
 
     <!-- NAV MENU -->
-    <div class="nav" id="myNav">
+    <nav class="nav" id="myNav">
         <div id="logo"></div>
         <div class="navItem">
             <a id="cennikNav">Cenník</a>
@@ -41,17 +42,17 @@
         <div class="navItem">
             <a id="kontaktNav">Kontakt</a>
         </div>
-    </div>
+    </nav>
     <div id="arrowDown"></div>
 
     <!-- LANDING PAGE -->
     <header id="mainHeader">
         <div id="landingContainer">
             <h1 id="heading">Apartmány Humenné </h1>
-            <p id="subHeading">
+            <h3 id="subHeading">
                 Najobľúbenejšie ubytovanie,
                 <br> priamo v centre mesta
-            </p>
+            </h3>
         </div>
         <div id="reservation">
             <p id="priceLandingPage">už od
@@ -65,7 +66,7 @@
         <!-- UVOD -->
         <section id="uvod">
             <div class="sectionContainer">
-                <p class="sectionHeading">Nové apartmány v centre mesta!</p>
+                <h2 class="sectionHeading">Nové apartmány v centre mesta!</h2>
                 <p>
                     Celoročné nonstop ubytovanie v nových apartmánoch s kapacitou 30 lôžok.
                     <br> Každý apartmán disponuje vlastnou kúpeľňou (sprchový kút / vaňa), WiFi pripojením, TV, plne vybavenou
@@ -85,11 +86,11 @@
         <!-- CENNIK -->
         <section id="cennik">
             <div class="sectionContainer">
-                <p class="sectionHeading">
+                <h2 class="sectionHeading">
                     Cenník
                     <br>
                     <span class="sectionSubHeading">cena za 1 celý apartmán / 1 noc</span>
-                </p>
+                </h2>
                 <!-- JEDNOSPÁLŇOVÝ BYT -->
                 <div class="cennikByt">
                     <div class="cennikHead">JEDNOSPÁLŇOVÝ (3 lôžka)</div>
@@ -196,25 +197,25 @@
         <!-- GALERIA -->
         <section id="galeria">
             <div class="sectionContainer">
-                <p class="sectionHeading">Galéria</p>
+                <h2 class="sectionHeading">Galéria</h2>
                 <p id="galeriaHelpText">Po kliknutí na fotku sa zobrazí celá galéria.</p>
                 <div id="galeriaContainer">
                    <div id="galeriaRow">
                         <div class="galeriaColumn">
-                            <img class="photo" src="images/photos/apartmany2.jpg" alt="apartmany 2" id="photo_2">
-                            <img class="photo" src="images/photos/apartmany18.jpg" alt="apartmany 18" id="photo_18">
+                            <img class="photo" src="images/photos-small/apartmany2-small.jpg" alt="fotka-apartmany-2" id="photo_2">
+                            <img class="photo" src="images/photos-small/apartmany18-small.jpg" alt="fotka-apartmany-18" id="photo_18">
                         </div>
                         <div class="galeriaColumn">
-                            <img class="photo" src="images/photos/apartmany15.jpg" alt="apartmany 15" id="photo_15">
-                            <img class="photo" src="images/photos/apartmany1.jpg" alt="apartmany 1" id="photo_1">
+                            <img class="photo" src="images/photos-small/apartmany15-small.jpg" alt="fotka-apartmany-15" id="photo_15">
+                            <img class="photo" src="images/photos-small/apartmany1-small.jpg" alt="fotka-apartmany-1" id="photo_1">
                         </div>
                         <div class="galeriaColumn">
-                            <img class="photo" src="images/photos/apartmany10.jpg" alt="apartmany 10" id="photo_10">
-                            <img class="photo" src="images/photos/apartmany16.jpg" alt="apartmany 16" id="photo_16">
+                            <img class="photo" src="images/photos-small/apartmany10-small.jpg" alt="fotka-apartmany-10" id="photo_10">
+                            <img class="photo" src="images/photos-small/apartmany16-small.jpg" alt="fotka-apartmany-16" id="photo_16">
                         </div>
                         <div class="galeriaColumn">
-                            <img class="photo" src="images/photos/apartmany21.jpg" alt="apartmany 21" id="photo_21">
-                            <img class="photo" src="images/photos/apartmany11.jpg" alt="apartmany 11" id="photo_11">
+                            <img class="photo" src="images/photos-small/apartmany21-small.jpg" alt="fotka-apartmany-21" id="photo_21">
+                            <img class="photo" src="images/photos-small/apartmany11-small.jpg" alt="fotka-apartmany-11" id="photo_11">
                         </div>
                    </div>
                 </div>             
@@ -224,7 +225,7 @@
         <!-- HODNOTENIE ZAKAZNIKOV -->
         <section id="hodnotenie">
             <div class="sectionContainer">
-                <p class="sectionHeading">Povedali o nás</p>
+                <h2 class="sectionHeading">Povedali o nás</h2>
                 <div id="hodnotenieContainer">
                     <div class="samotneHodnotenie">
                         <div class="quoteSign">&#8220;</div>
@@ -275,7 +276,7 @@
         <!-- KONTAKT -->
         <section id="kontakt">
             <div class="sectionContainer">
-                <p class="sectionHeading">Kontakt</p>
+                <h2 class="sectionHeading">Kontakt</h2>
                 <div id="kontaktContainer">
                     <div id="kontaktAdresa" class="adressItem">
                         <p class="bold adressItemHead">ADRESA:</p>
@@ -332,14 +333,7 @@
         </div>
     </footer>
 
-    <!-- GOOGLE MAPS -->
-    <script>
-        function initMap(){var e={zoom:17,center:{lat:48.933567,lng:21.907837}},n=new google.maps.Map(document.getElementById("map"),e);new google.maps.Marker({position:{lat:48.933567,lng:21.907837},map:n})}
-    </script>
-
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSeWcGwiJhXeoDuS8S1PQVXCHnlGbyAIs&callback=initMap">
-    </script>
-    <script src="main.js"></script>
+    <script src="main.js" defer></script>
 </body>
 
 </html>

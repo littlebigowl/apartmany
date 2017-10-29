@@ -74,7 +74,7 @@ body{
 
 /* LAND PAGE HEADING */
 #mainHeader{
-    background-image: url("images/bg3.jpeg");
+    background-image: url("images/bg.jpg");
     height: 100vh;
     width: 100%;
     background-size: cover;
@@ -211,16 +211,23 @@ body{
     text-align: center;
     border-bottom: 1px solid #333;
 }
-.cennikByt{
+.bytContainer{
     max-width: 600px;
     margin: 0 auto 40px auto; 
+}
+.cennikByt{
+    border-bottom: 1px dashed #888
+}
+.vybavenie{
+    font-size: 16px;
+    padding: 5px 10px;
 }
 .polozkaCena{
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
 }
-.pocetOsob{
+.pocetOsob{ 
     width: 40%;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
@@ -473,21 +480,30 @@ footer{
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
 }
 #footerLeft{
-    width: 50%;
+    width: calc(100%/3);
+}
+#footerCenter{
+    width: calc(100%/3);
+    text-align: center;
 }
 #footerRight{
-    width: 50%;
+    width: calc(100%/3);
     text-align:  right;
 }
-#footerLeft p, #footerRight p{
+#footerLeft p, #footerRight p,#footerCenter p{
     padding: 3px 0;
 }
-#prevadzkovatel{
+.prevadzkovatel{
     padding: 0 0;
     max-width: 120px;
     border-bottom: 1px solid #ccc;
+}
+.adresaFooter{
+    margin: 0 auto;
 }
 #creatorContainer{
     margin-top: 15px;
@@ -551,6 +567,9 @@ footer{
     #mainSectionContainer section .sectionHeading{
         font-size: 22px;
     }
+    .vybavenie{
+        font-size: 14px;
+    }
     #cenaDodatok p{
         margin-bottom: 6px;
         font-size: 16px;
@@ -564,6 +583,23 @@ footer{
     .quoteSign{
         font-size: 50px;
         margin-top: -10px;        
+    }
+
+    #footerLeft{
+        width: 50%;
+    }
+    #footerCenter{
+        width: 50%;
+        text-align: right;
+    }
+    #footerRight{
+        width: 100%;
+        margin-top: 20px;
+        text-align:  center;
+    }
+    .prevadzkovatel{
+        max-width: 100%;
+        width: 100%;
     }
     
 }
@@ -583,9 +619,10 @@ footer{
     #cenaDodatok p{
         font-size: 15px;
     }
-    
     #iconContainer img{
         height: 40px;
         padding: 5px 3px;
     }
+
+    
 }

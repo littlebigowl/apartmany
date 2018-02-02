@@ -58,10 +58,12 @@ body {
   cursor: pointer;
   color: #FFD700; }
 
-#myNav a {
+#myNav {
   font-size: 26px;
   text-decoration: none;
-  color: #eee; }
+  color: #eee;
+  -webkit-transition: all .5s;
+  transition: all .5s; }
 
 #myNav a:hover {
   text-decoration: none;
@@ -505,8 +507,6 @@ footer {
   cursor: pointer; }
 
 @media (max-width: 1000px) {
-  #myNav a {
-    font-size: 24px; }
   #landingContainer {
     padding: 10px 20px; }
   #heading {
@@ -523,7 +523,7 @@ footer {
   #footerContainer {
     width: 90%; } }
 
-@media (max-width: 678px) {
+@media (max-width: 666px) {
   #myNav a {
     font-size: 20px; }
   #heading {
@@ -565,6 +565,8 @@ footer {
 @media (max-width: 414px) {
   #myNav a {
     font-size: 16px; }
+  .navItem {
+    padding: 4px; }
   .sectionContainer {
     width: 90%;
     font-size: 16px; }

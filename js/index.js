@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", function () {
     var z = "humenne";
     document.getElementById("actualEmail").innerText = x + "@" + y + z + ".sk";
 
+    var myNav = document.getElementById("myNav");
+
     var uvodNav = document.getElementById("uvodNav");
     var cennikNav = document.getElementById("cennikNav");
     var galeriaNav = document.getElementById("galeriaNav");
@@ -51,6 +53,16 @@ document.addEventListener("DOMContentLoaded", function () {
     logo.addEventListener("click", function () {
         if (!isAnimated) {
             window.scrollTo(0, 0);
+        }
+    });
+
+    window.addEventListener("scroll", function () {
+        if (window.innerWidth > 400) {
+            if (getScrollTop() > 150) {
+                myNav.style.fontSize = 18 + "px";
+            } else {
+                myNav.style.fontSize = 26 + "px";
+            }
         }
     });
 

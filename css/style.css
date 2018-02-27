@@ -506,6 +506,20 @@ footer {
 #creator:hover {
   cursor: pointer; }
 
+#loadingModal {
+  z-index: 500;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  color: #eee;
+  display: none;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
 @media (max-width: 1000px) {
   #landingContainer {
     padding: 10px 20px; }
@@ -562,11 +576,12 @@ footer {
     max-width: 100%;
     width: 100%; } }
 
-@media (max-width: 414px) {
+@media (max-width: 414px), (max-height: 414px) {
   #myNav a {
     font-size: 16px; }
   .navItem {
-    padding: 4px; }
+    padding: 8px 4px;
+    font-size: 16px; }
   .sectionContainer {
     width: 90%;
     font-size: 16px; }

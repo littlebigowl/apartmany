@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("actualEmail").innerText = x + "@" + y + z + ".sk";
 
     var myNav = document.getElementById("myNav");
+    var loadingModal = document.getElementById("loadingModal");
 
     var uvodNav = document.getElementById("uvodNav");
     var cennikNav = document.getElementById("cennikNav");
@@ -36,29 +37,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
     var ofsetTop = 50;
     cennikNav.addEventListener("click", function () {
-        animateScroll(cennikMain, cennikMain.offsetTop - ofsetTop);
+        scrollToY(cennikMain.offsetTop - ofsetTop, 100, 'easeInOutQuint');
+        //animateScroll(cennikMain, cennikMain.offsetTop - ofsetTop);
     });
     galeriaNav.addEventListener("click", function () {
-        animateScroll(galeriaMain, galeriaMain.offsetTop - ofsetTop);
+        scrollToY(galeriaMain.offsetTop - ofsetTop, 100, 'easeInOutQuint');
+        //animateScroll(galeriaMain, galeriaMain.offsetTop - ofsetTop);
     });
     kontaktNav.addEventListener("click", function () {
-        animateScroll(kontaktMain, kontaktMain.offsetTop - ofsetTop);
+        scrollToY(kontaktMain.offsetTop - ofsetTop, 100, 'easeInOutQuint');
+        //animateScroll(kontaktMain, kontaktMain.offsetTop - ofsetTop);
     });
     arrowDown.addEventListener("click", function () {
-        animateScroll(uvodMain, uvodMain.offsetTop - ofsetTop);
+        scrollToY(uvodMain.offsetTop - ofsetTop, 100, 'easeInOutQuint');
+        //animateScroll(uvodMain, uvodMain.offsetTop - ofsetTop);
     });
     uvodNav.addEventListener("click", function () {
-        animateScroll(uvodMain, uvodMain.offsetTop - ofsetTop);
+        scrollToY(uvodMain.offsetTop - ofsetTop, 100, 'easeInOutQuint');
+        //animateScroll(uvodMain, uvodMain.offsetTop - ofsetTop);
     });
     logo.addEventListener("click", function () {
-        if (!isAnimated) {
-            window.scrollTo(0, 0);
-        }
+        scrollToY(0, 100, 'easeInOutQuint');
+        // if (!isAnimated) {
+        //     window.scrollTo(0, 0);
+        // }
     });
 
     window.addEventListener("scroll", function () {
-        if (window.innerWidth > 400) {
-            if (getScrollTop() > 150) {
+        if (window.innerWidth > 414) {
+            if (getScrollTop() > 50) {
                 myNav.style.fontSize = 18 + "px";
             } else {
                 myNav.style.fontSize = 26 + "px";
@@ -84,6 +91,9 @@ document.addEventListener("DOMContentLoaded", function () {
     var totalPhotosToLoadToGallery = 23;
     var gallery = new Array();
     function setPhotos() {
+        loadingModal.style.display = "flex";
+        loadingModal.style.position = "fixed";
+
         for (var i = 0; i < totalPhotosToLoadToGallery; i++) {
             var image = new Image();
             image.src = "images/photos/apartmany" + (i + 1) + ".jpg";
@@ -91,8 +101,9 @@ document.addEventListener("DOMContentLoaded", function () {
             image.className = "imageGallery";
             gallery[i] = image;
         }
+        // loadingModal.style.display = "none";
     }
-    setPhotos();
+    //setPhotos();
 
     // ADD CLICK EVENT FOR PHOTOS ON PAGE
     function addClickEventToPhotos() {
@@ -117,7 +128,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // OPEN GALLERY MODAL
     function openGalleryModal(num) {
-        // helpTopForModal = getScrollTop();
+        setPhotos();
+
         updateModalCounting();
         galleryModal.style.position = "fixed";
         galleryModal.style.display = "block";
@@ -192,79 +204,69 @@ document.addEventListener("DOMContentLoaded", function () {
         return parseInt(y);
     }
 
-    var timer;
-    var isAnimated = false;
-    var speedOfScrolling = 60;
-    // ANIMATION SCROLL TO
-    function animateScroll(elem, scrollTo) {
-        if (isAnimated) {
-            console.log("is animated");
-            return;
-        }
-        if (scrollTo != getScrollTop()) {
-            if (!elem) {
-                console.log("returned animation");
-                return;
+    // first add raf shim
+    // http://www.paulirish.com/2011/requestanimationframe-for-smart-animating/
+    window.requestAnimFrame = function () {
+        return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function (callback) {
+            window.setTimeout(callback, 1000 / 60);
+        };
+    }();
+
+    // main function
+    function scrollToY(scrollTargetY, speed, easing) {
+        // scrollTargetY: the target scrollY property of the window
+        // speed: time in pixels per second
+        // easing: easing equation to use
+
+        var scrollY = window.scrollY || document.documentElement.scrollTop,
+            scrollTargetY = scrollTargetY || 0,
+            speed = speed || 2000,
+            easing = easing || 'easeOutSine',
+            currentTime = 0;
+
+        // min time .1, max time .8 seconds
+        var time = Math.max(.1, Math.min(Math.abs(scrollY - scrollTargetY) / speed, .8));
+
+        // easing equations from https://github.com/danro/easing-js/blob/master/easing.js
+        var easingEquations = {
+            easeOutSine: function easeOutSine(pos) {
+                return Math.sin(pos * (Math.PI / 2));
+            },
+            easeInOutSine: function easeInOutSine(pos) {
+                return -0.5 * (Math.cos(Math.PI * pos) - 1);
+            },
+            easeInOutQuint: function easeInOutQuint(pos) {
+                if ((pos /= 0.5) < 1) {
+                    return 0.5 * Math.pow(pos, 5);
+                }
+                return 0.5 * (Math.pow(pos - 2, 5) + 2);
             }
-            isAnimated = true;
-            safeGuardScrollHelp = 0;
-            var actualPosition = getScrollTop();
-            timer = setInterval(function () {
-                // MOVING DOWN
-                if (getScrollTop() < scrollTo) {
-                    if (getScrollTop() + speedOfScrolling < scrollTo) {
-                        window.scrollTo(0, getScrollTop() + speedOfScrolling);
-                    } else {
-                        window.scrollTo(0, scrollTo);
-                        clearInterval(timer);
-                        isAnimated = false;;
-                    }
-                    chceckBottomOfPage();
-                }
-                // MOVING UP
-                if (getScrollTop() > scrollTo) {
-                    if (getScrollTop() - speedOfScrolling > scrollTo) {
-                        window.scrollTo(0, getScrollTop() - speedOfScrolling);
-                    } else {
-                        window.scrollTo(0, scrollTo);
-                        clearInterval(timer);
-                        isAnimated = false;
-                    }
-                }
-                // Safe checking for canceling animation if there is any problem
-                safeGuardScrollHelp += 20;
-                safeGuardScrollAnimation();
-            }, 20);
+        };
+
+        // add animation loop
+        function tick() {
+            currentTime += 1 / 60;
+
+            var p = currentTime / time;
+            var t = easingEquations[easing](p);
+
+            if (p < 1) {
+                requestAnimFrame(tick);
+
+                window.scrollTo(0, scrollY + (scrollTargetY - scrollY) * t);
+            } else {
+                console.log('scroll done');
+                window.scrollTo(0, scrollTargetY);
+            }
         }
+
+        // call it once to get started
+        tick();
     }
 
-    // SAFE GUARD FOR SCROLL ANIMATION
-    var safeGuardScrollHelp = 0;
-    function safeGuardScrollAnimation() {
-        if (isAnimated && safeGuardScrollHelp > 4000) {
-            clearInterval(timer);
-            isAnimated = false;
-            safeGuardScrollHelp = 0;
-            console.log("scroll animation problem");
-        }
-    }
+    // scroll it!
+    //scrollToY(1000, 1500, 'easeInOutQuint');
 
-    // GET THE DOCUMENT HIGHT
-    function getDocHeight() {
-        var D = document;
-        return Math.max(D.body.scrollHeight, D.documentElement.scrollHeight, D.body.offsetHeight, D.documentElement.offsetHeight, D.body.clientHeight, D.documentElement.clientHeight);
-    }
-
-    // CHECKING, IF THE PAGE IS AT THE BOTTOM
-    var pageHeight = getDocHeight();
-    function chceckBottomOfPage() {
-        var actualScroll = getScrollTop() + window.innerHeight;
-        if (actualScroll > pageHeight - 50) {
-            clearInterval(timer);
-            isAnimated = false;
-            safeGuardScrollHelp = 0;
-        }
-    }
 });
 
 var map;

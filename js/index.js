@@ -35,6 +35,9 @@ document.addEventListener("DOMContentLoaded", function () {
     var countActualPhoto = document.getElementById("countActualPhoto");
     var footer = document.getElementById("footerContainer");
 
+    //if user is in gallery mode = true
+    var inGallery = false;
+
     var ofsetTop = 50;
     cennikNav.addEventListener("click", function () {
         scrollToY(cennikMain.offsetTop - ofsetTop, 100, 'easeInOutQuint');
@@ -135,6 +138,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // OPEN GALLERY MODAL
     function openGalleryModal(num) {
         clearModal();
+        inGallery = true;
 
         updateModalCounting();
         galleryModal.style.position = "fixed";
@@ -150,6 +154,7 @@ document.addEventListener("DOMContentLoaded", function () {
         galleryModal.style.display = "none";
         document.documentElement.style.overflowY = "auto";
         document.body.scroll = "yes";
+        inGallery = false;
     }
     // CLOSING MODAL BY CLICKING ON CROSS
     crossCloseGalleryModal.addEventListener("click", closeGalleryModal);
@@ -267,6 +272,32 @@ document.addEventListener("DOMContentLoaded", function () {
         // call it once to get started
         tick();
     }
+
+    var touchStart = {
+        x: -1,
+        y: -1
+    };
+    // HORIZONTAL TOUCH FINGER SWIPE  
+    galleryModal.addEventListener("touchstart", function (e) {
+        if (inGallery) {
+            touchStart.x = e.changedTouches[0].clientX;
+            touchStart.y = e.changedTouches[0].clientY;
+        }
+    });
+    galleryModal.addEventListener("touchend", function (e) {
+        if (inGallery) {
+            var xMove = touchStart.x - e.changedTouches[0].clientX;
+            var yMove = Math.abs(touchStart.y - e.changedTouches[0].clientY);
+            // Move LEFT
+            if (xMove > 100 && yMove < 30) {
+                moveGalleryLeft();
+            }
+            // Move RIGHT
+            if (xMove < 100 && yMove < 30) {
+                moveGalleryRight();
+            }
+        }
+    });
 });
 
 var map;

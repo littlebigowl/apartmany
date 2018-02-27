@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("actualEmail").innerText = x + "@" + y + z + ".sk";
 
     var myNav = document.getElementById("myNav");
+    var loadingModal = document.getElementById("loadingModal");
 
     var uvodNav = document.getElementById("uvodNav");
     var cennikNav = document.getElementById("cennikNav");
@@ -55,7 +56,8 @@ document.addEventListener("DOMContentLoaded", function () {
         scrollToY(0, 100, 'easeInOutQuint');
     });
 
-    window.addEventListener("scroll", function () {
+    window.addEventListener("scroll", checkScrollForNavSize);
+    function checkScrollForNavSize() {
         if (window.innerWidth > 414) {
             if (getScrollTop() > 50) {
                 myNav.style.fontSize = 18 + "px";
@@ -63,7 +65,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 myNav.style.fontSize = 26 + "px";
             }
         }
-    });
+    }
+    checkScrollForNavSize();
 
     // GOOGLE MAP LOAD
     if (document.querySelectorAll("#map").length > 0) {
@@ -83,22 +86,21 @@ document.addEventListener("DOMContentLoaded", function () {
     var totalPhotosToLoadToGallery = 23;
     var gallery = new Array();
     function setPhotos() {
-
         for (var i = 0; i < totalPhotosToLoadToGallery; i++) {
-            var image = new Image();
-            image.src = "images/photos/apartmany" + (i + 1) + ".jpg";
-            image.alt = "fotka_apartmany_" + (i + 1);
-            image.className = "imageGallery";
-            gallery[i] = image;
+            gallery.push({
+                src: "images/photos/apartmany" + (i + 1) + ".jpg",
+                alt: "fotka_apartmany_" + (i + 1),
+                class: "imageGallery",
+                img: null
+            });
         }
     }
-    //setPhotos();
+    setPhotos();
 
     // ADD CLICK EVENT FOR PHOTOS ON PAGE
     function addClickEventToPhotos() {
         var photos = document.getElementsByClassName("photo");
         for (var i = 0; i < photos.length; i++) {
-
             photos[i].addEventListener("click", function () {
                 var str = getNumberFromId(this.id);
                 actualPhotoNumber = str;
@@ -115,9 +117,24 @@ document.addEventListener("DOMContentLoaded", function () {
         return parseInt(x[1]);
     }
 
+    function loadPictureFromGallery(numberOfPicture) {
+        if (gallery[numberOfPicture].img === null) {
+            loadingModal.style.display = "flex";
+            var image = new Image();
+            image.addEventListener("load", function () {
+                loadingModal.style.display = "none";
+            });
+            image.src = gallery[lodedImageInGalleryIndexInArray].src;
+            image.alt = gallery[lodedImageInGalleryIndexInArray].alt;
+            image.className = gallery[lodedImageInGalleryIndexInArray].class;
+            gallery[lodedImageInGalleryIndexInArray].img = image;
+        }
+        actualPhoto.appendChild(gallery[lodedImageInGalleryIndexInArray].img);
+    }
+
     // OPEN GALLERY MODAL
     function openGalleryModal(num) {
-        setPhotos();
+        clearModal();
 
         updateModalCounting();
         galleryModal.style.position = "fixed";
@@ -125,7 +142,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.documentElement.style.overflowY = "hidden";
         document.body.scroll = "no";
         lodedImageInGalleryIndexInArray = num - 1;
-        actualPhoto.appendChild(gallery[lodedImageInGalleryIndexInArray]);
+        loadPictureFromGallery(lodedImageInGalleryIndexInArray);
     }
     // CLOSE GALLERY MODAL
     function closeGalleryModal() {
@@ -165,7 +182,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (lodedImageInGalleryIndexInArray >= gallery.length) {
             lodedImageInGalleryIndexInArray = 0;
         }
-        actualPhoto.appendChild(gallery[lodedImageInGalleryIndexInArray]);
+        loadPictureFromGallery(lodedImageInGalleryIndexInArray);
         actualPhotoNumber = lodedImageInGalleryIndexInArray + 1;
         updateModalCounting();
     }
@@ -178,7 +195,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (lodedImageInGalleryIndexInArray < 0) {
             lodedImageInGalleryIndexInArray = gallery.length - 1;
         }
-        actualPhoto.appendChild(gallery[lodedImageInGalleryIndexInArray]);
+        loadPictureFromGallery(lodedImageInGalleryIndexInArray);
         actualPhotoNumber = lodedImageInGalleryIndexInArray + 1;
         updateModalCounting();
     }

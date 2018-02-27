@@ -27,6 +27,7 @@
 <body>
 
     <!-- GALLERY MODAL -->
+
     <div id="galleryModal">
         <span id="crossCloseGalleryModal">&times;</span>
         <div id="modalGalleryHeading">
@@ -35,7 +36,17 @@
                 <span id="countTotalPhotos"></span>
             </p>
         </div>
+        <!-- LOADING PICTURE SPINNER -->
+        <div id="loadingModal">
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+        </div>
+        <!-- ACTUAL PHOTO IN GALLERY -->
         <div id="actualPhoto"></div>
+        <!-- GALLERY NAVIGATION -->
         <div id="galleryNav">
             <div id="galleryNavLeft" class="galleryNavigation">
                 <span>&lt;</span>
@@ -49,22 +60,23 @@
     <!-- NAV MENU -->
     <nav class="nav">
         <div id="myNav">
-            <div class="navItem">
-                <a id="uvodNav">Úvod</a>
+            <div class="navItem" id="uvodNav">
+                <a >Úvod</a>
             </div>
-            <div class="navItem">
-                <a id="cennikNav">Cenník</a>
+            <div class="navItem" id="cennikNav">
+                <a >Cenník</a>
             </div>
             <div id="logo"></div>
-            <div class="navItem">
-                <a id="galeriaNav">Galéria</a>
+            <div class="navItem" id="galeriaNav">
+                <a >Galéria</a>
             </div>
-            <div class="navItem">
-                <a id="kontaktNav">Kontakt</a>
+            <div class="navItem" id="kontaktNav">
+                <a >Kontakt</a>
             </div>
         </div>
     </nav>
     <div id="arrowDown"></div>
+    
 
     <!-- LANDING PAGE -->
     <header id="mainHeader">
@@ -259,6 +271,10 @@
             </div>
         </section>
 
+
+        
+
+
         <!-- HODNOTENIE ZAKAZNIKOV -->
         <section id="hodnotenie">
             <div class="sectionContainer">
@@ -372,7 +388,7 @@
                     <br>AV + SV, s.r.o.</p>
                 <p id="creatorContainer">CREATED BY:
                     <br>
-                    <a id="creator" target="blank" href="https://littlebigowl.github.io/space/">Peter Sciranka</a>
+                    <a id="creator" target="blank" href="https://sciranka.github.io">Peter Sciranka</a>
                 </p>
             </div>
         </div>

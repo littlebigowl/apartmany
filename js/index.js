@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("actualEmail").innerText = x + "@" + y + z + ".sk";
 
     var myNav = document.getElementById("myNav");
-    var loadingModal = document.getElementById("loadingModal");
 
     var uvodNav = document.getElementById("uvodNav");
     var cennikNav = document.getElementById("cennikNav");
@@ -42,25 +41,18 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     galeriaNav.addEventListener("click", function () {
         scrollToY(galeriaMain.offsetTop - ofsetTop, 100, 'easeInOutQuint');
-        //animateScroll(galeriaMain, galeriaMain.offsetTop - ofsetTop);
     });
     kontaktNav.addEventListener("click", function () {
         scrollToY(kontaktMain.offsetTop - ofsetTop, 100, 'easeInOutQuint');
-        //animateScroll(kontaktMain, kontaktMain.offsetTop - ofsetTop);
     });
     arrowDown.addEventListener("click", function () {
         scrollToY(uvodMain.offsetTop - ofsetTop, 100, 'easeInOutQuint');
-        //animateScroll(uvodMain, uvodMain.offsetTop - ofsetTop);
     });
     uvodNav.addEventListener("click", function () {
         scrollToY(uvodMain.offsetTop - ofsetTop, 100, 'easeInOutQuint');
-        //animateScroll(uvodMain, uvodMain.offsetTop - ofsetTop);
     });
     logo.addEventListener("click", function () {
         scrollToY(0, 100, 'easeInOutQuint');
-        // if (!isAnimated) {
-        //     window.scrollTo(0, 0);
-        // }
     });
 
     window.addEventListener("scroll", function () {
@@ -91,8 +83,6 @@ document.addEventListener("DOMContentLoaded", function () {
     var totalPhotosToLoadToGallery = 23;
     var gallery = new Array();
     function setPhotos() {
-        loadingModal.style.display = "flex";
-        loadingModal.style.position = "fixed";
 
         for (var i = 0; i < totalPhotosToLoadToGallery; i++) {
             var image = new Image();
@@ -101,7 +91,6 @@ document.addEventListener("DOMContentLoaded", function () {
             image.className = "imageGallery";
             gallery[i] = image;
         }
-        // loadingModal.style.display = "none";
     }
     //setPhotos();
 
@@ -204,8 +193,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return parseInt(y);
     }
 
-    // first add raf shim
-    // http://www.paulirish.com/2011/requestanimationframe-for-smart-animating/
+    // ANIMATION
     window.requestAnimFrame = function () {
         return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function (callback) {
             window.setTimeout(callback, 1000 / 60);
@@ -255,18 +243,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 window.scrollTo(0, scrollY + (scrollTargetY - scrollY) * t);
             } else {
-                console.log('scroll done');
+                //console.log('scroll done');
                 window.scrollTo(0, scrollTargetY);
             }
         }
-
         // call it once to get started
         tick();
     }
-
-    // scroll it!
-    //scrollToY(1000, 1500, 'easeInOutQuint');
-
 });
 
 var map;

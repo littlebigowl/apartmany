@@ -293,11 +293,11 @@ document.addEventListener("DOMContentLoaded", function () {
             var yMove = Math.abs(touchStart.y - e.changedTouches[0].clientY);
             console.log(xMove, yMove);
             // Move LEFT
-            if (xMove > 100 && yMove < 30) {
+            if (xMove > 100 && yMove < 60) {
                 moveGalleryLeft();
             }
             // Move RIGHT
-            if (xMove < -100 && yMove < 30) {
+            if (xMove < -100 && yMove < 60) {
                 moveGalleryRight();
             }
             touchStart.x = -1;

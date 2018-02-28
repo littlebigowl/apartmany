@@ -291,7 +291,6 @@ document.addEventListener("DOMContentLoaded", function () {
         if (inGallery) {
             var xMove = touchStart.x - e.changedTouches[0].clientX;
             var yMove = Math.abs(touchStart.y - e.changedTouches[0].clientY);
-            console.log(xMove, yMove);
             // Move LEFT
             if (xMove > 100 && yMove < 60) {
                 moveGalleryRight();

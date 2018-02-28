@@ -289,7 +289,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     galleryModal.addEventListener("touchend", function (e) {
         if (inGallery) {
-
             var xMove = touchStart.x - e.changedTouches[0].clientX;
             var yMove = Math.abs(touchStart.y - e.changedTouches[0].clientY);
             console.log(xMove, yMove);
@@ -301,6 +300,8 @@ document.addEventListener("DOMContentLoaded", function () {
             if (xMove < -100 && yMove < 30) {
                 moveGalleryRight();
             }
+            touchStart.x = -1;
+            touchStart.y = -1;
         }
     });
 });

@@ -284,16 +284,21 @@ document.addEventListener("DOMContentLoaded", function () {
             touchStart.y = e.changedTouches[0].clientY;
         }
     });
+    galleryModal.addEventListener("touchmove", function (e) {
+        e.preventDefault();
+    });
     galleryModal.addEventListener("touchend", function (e) {
         if (inGallery) {
+
             var xMove = touchStart.x - e.changedTouches[0].clientX;
             var yMove = Math.abs(touchStart.y - e.changedTouches[0].clientY);
+            console.log(xMove, yMove);
             // Move LEFT
             if (xMove > 100 && yMove < 30) {
                 moveGalleryLeft();
             }
             // Move RIGHT
-            if (xMove < 100 && yMove < 30) {
+            if (xMove < -100 && yMove < 30) {
                 moveGalleryRight();
             }
         }

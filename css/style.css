@@ -601,7 +601,10 @@ footer {
     width: 50%; }
   #footerCenter {
     width: 50%;
-    text-align: right; }
+    text-align: right;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end; }
   #footerRight {
     width: 100%;
     margin-top: 20px;

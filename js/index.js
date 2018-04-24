@@ -35,6 +35,12 @@ document.addEventListener("DOMContentLoaded", function () {
     var countActualPhoto = document.getElementById("countActualPhoto");
     var footer = document.getElementById("footerContainer");
 
+    var actualYearFooter = document.getElementById("actualYear");
+    // SET ACTUAL YEAR in FOOTER
+    var date = new Date();
+    var actualYear = date.getFullYear();
+    actualYearFooter.innerText = actualYear;
+
     //if user is in gallery mode = true
     var inGallery = false;
 

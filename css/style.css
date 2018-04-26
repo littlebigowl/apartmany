@@ -443,14 +443,14 @@ body {
 
 /* FOOTER */
 footer {
-  font-size: 12px;
+  font-size: 14px;
   background: #5f5f5f;
   color: #d1d1d1;
   padding: 25px 20px; }
 
 #footerContainer {
   max-width: 1000px;
-  width: 60%;
+  width: 100%;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -474,7 +474,7 @@ footer {
 
 .prevadzkovatel {
   padding: 0 0;
-  max-width: 120px;
+  max-width: 140px;
   border-bottom: 1px solid #ccc; }
 
 .adresaFooter {
@@ -585,6 +585,8 @@ footer {
     width: 50%; }
   .vybavenie-zoznam li {
     margin-bottom: 12px; }
+  footer {
+    font-size: 12px; }
   #footerLeft {
     width: 50%; }
   #footerCenter {

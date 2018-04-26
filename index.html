@@ -41,6 +41,7 @@
                 <span id="countActualPhoto"></span> /
                 <span id="countTotalPhotos"></span>
             </p>
+            <p id="modalPhotoDescription">Apartmán č. 1</p>
         </div>
         <!-- LOADING PICTURE SPINNER -->
         <div id="loadingModal">
@@ -69,10 +70,12 @@
             <div class="navItem" id="uvodNav">
                 <a >Úvod</a>
             </div>
+            <div class="navItem" id="apartmanyNav">
+                <a >Apartmány</a>
+            </div>
             <div class="navItem" id="cennikNav">
                 <a >Cenník</a>
             </div>
-            <div id="logo"></div>
             <div class="navItem" id="galeriaNav">
                 <a >Galéria</a>
             </div>
@@ -89,13 +92,16 @@
         <div id="landingContainer">
             <h1 id="heading">Apartmány Humenné </h1>
             <h3 id="subHeading">
-                Kvalitné ubytovanie, priamo v centre mesta
+                Kvalitné ubytovanie priamo v centre mesta,
+                <br>už od <span id="price" class="bold">10&euro;</span> osoba / noc
             </h3>
         </div>
         <div id="reservation">
-            <p id="priceLandingPage">už od
-                <span id="price">10&euro;</span> osoba / noc</p>
-            <p id="phoneLandingPage"><a href="tel:+421918405730"></a> +421 918 405 730</p>
+            <p id="priceLandingPage">Rezervácie:</p>
+            <div class="reservation-container">
+                <p id="phoneLandingPage"><a href="tel:+421918405730">+421 918 405 730</a></p>
+                <p id="emailLandingPage">info@apartmanyhumenne.sk</p>
+            </div>
         </div>
     </header>
 
@@ -117,6 +123,27 @@
                     <img src="images/icons/iconBath.png" alt="kúpeľňa ikona">
                     <img src="images/icons/iconFridge.png" alt="chladnička ikona">
                 </div>
+            </div>
+        </section>
+
+        <!-- APARTMANY VYBAVENIE -->
+        <section id="vybavenie" class="bg-gray">
+            <div class="sectionContainer">
+                <h2 class="sectionHeading">Vybavenie aprtmánov</h2>
+                <ul class="vybavenie-zoznam">
+                    <li>televízor – káblový príjem TV</li>
+                    <li>internet – WIFI</li>
+                    <li>izby – postele/prístelky, skrine, nočné stolíky, kreslá/stoličky, sedacie súpravy</li>
+                    <li>kúpeľňa – sprchový kút/vaňa, WC, umývadlo</li>
+                    <li>kuchyňa – plne vybavená kuchynská linka, jedálenský stôl, chladnička, elektrický sporák/indukčná platňa, mikrovlnná rúra, rýchlovarná kanvica</li>
+                </ul>
+                <h3 class="vybavenie-subheading">Na recepcii:</h3>
+                <ul class="vybavenie-zoznam">
+                    <li>žehlička a žehliaca doska</li>
+                    <li>fén na vlasy</li>
+                    <li>detská postieľka</li>
+                </ul>
+                <p class="bold">K dispozícii je taktiež úschovňa bicyklov / kočíkov.</p>
             </div>
         </section>
 
@@ -248,7 +275,7 @@
 
 
         <!-- GALERIA -->
-        <section id="galeria">
+        <section id="galeria" class="bg-gray">
             <div class="sectionContainer">
                 <h2 class="sectionHeading">Galéria</h2>
                 <p id="galeriaHelpText">Po kliknutí na fotku sa zobrazí celá galéria.</p>
@@ -280,6 +307,17 @@
             <div class="sectionContainer">
                 <h2 class="sectionHeading">Kontakt</h2>
                 <div id="kontaktContainer">
+                    <div id="kontaktFormular" class="adressItem">
+                        <p class="bold adressItemHead">REZERVÁCIE:</p>
+                        <p>
+                            <span class="kontakt-item-head">MOBIL:</span>
+                            <span class="bold"><a href="tel:+421918405730" id="kontakt-tel">+421 918 405 730</a></span>
+                        </p>
+                        <p>
+                            <span class="kontakt-item-head">EMAIL:</span>
+                            <span class="bold" id="actualEmail"></span>
+                        </p>
+                    </div>
                     <div id="kontaktAdresa" class="adressItem">
                         <p class="bold adressItemHead">ADRESA:</p>
                         <p id="actualAdress">
@@ -290,16 +328,6 @@
                         <p id="odkazNaMapy">
                             <a target="blank" href="https://www.google.com/maps/@48.9335587,21.9078758,17z">Pozri v Google mapách</a>
                         </p>
-                    </div>
-                    <div id="kontaktFormular" class="adressItem">
-                        <p class="bold adressItemHead">REZERVÁCIE:</p>
-                        <p>MOBIL:
-                            <span class="bold">+421 918 405 730</span>
-                        </p>
-                        <p>EMAIL:
-                            <span class="bold" id="actualEmail"></span>
-                        </p>
-
                     </div>
                 </div>
             </div>

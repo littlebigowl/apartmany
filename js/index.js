@@ -17,12 +17,13 @@ document.addEventListener("DOMContentLoaded", function () {
     var galeriaNav = document.getElementById("galeriaNav");
     var kontaktNav = document.getElementById("kontaktNav");
     var arrowDown = document.getElementById("arrowDown");
-    var logo = document.getElementById("logo");
+    var apartmanyNav = document.getElementById("apartmanyNav");
 
     var uvodMain = document.getElementById("uvod");
     var cennikMain = document.getElementById("cennik");
     var galeriaMain = document.getElementById("galeria");
     var kontaktMain = document.getElementById("kontakt");
+    var vybavenieMain = document.getElementById("vybavenie");
 
     var galleryContainer = document.getElementById("galeriaContainer");
     var morePhotosButton = document.getElementById("morePhotosButton");
@@ -33,6 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var galleryNavRight = document.getElementById("galleryNavRight");
     var countTotalPhotos = document.getElementById("countTotalPhotos");
     var countActualPhoto = document.getElementById("countActualPhoto");
+    var modalPhotoDescription = document.getElementById("modalPhotoDescription");
     var footer = document.getElementById("footerContainer");
 
     var actualYearFooter = document.getElementById("actualYear");
@@ -61,8 +63,8 @@ document.addEventListener("DOMContentLoaded", function () {
     uvodNav.addEventListener("click", function () {
         scrollToY(uvodMain.offsetTop - ofsetTop, 100, 'easeInOutQuint');
     });
-    logo.addEventListener("click", function () {
-        scrollToY(0, 100, 'easeInOutQuint');
+    apartmanyNav.addEventListener("click", function () {
+        scrollToY(vybavenieMain.offsetTop - ofsetTop, 100, 'easeInOutQuint');
     });
 
     window.addEventListener("scroll", checkScrollForNavSize);
@@ -71,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (getScrollTop() > 50) {
                 myNav.style.fontSize = 18 + "px";
             } else {
-                myNav.style.fontSize = 26 + "px";
+                myNav.style.fontSize = 20 + "px";
             }
         }
     }
@@ -92,14 +94,25 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // LOAD and SET ALL IMAGES IN GALLERY
-    var totalPhotosToLoadToGallery = 23;
+    var totalPhotosToLoadToGallery = 21;
     var gallery = new Array();
     function setPhotos() {
         for (var i = 0; i < totalPhotosToLoadToGallery; i++) {
+            var photoDescription = "";
+            if (i + 1 == 1) {
+                photoDescription = "Apartmány - budova";
+            } else if (i + 1 < 8) {
+                photoDescription = "Jednospálňový apartmán";
+            } else if (i + 1 < 14) {
+                photoDescription = "Viacspálňový apartmán";
+            } else {
+                photoDescription = "Podkrovný apartmán";
+            }
             gallery.push({
                 src: "images/photos/apartmany" + (i + 1) + ".jpg",
                 alt: "fotka_apartmany_" + (i + 1),
                 class: "imageGallery",
+                description: photoDescription,
                 img: null
             });
         }
@@ -138,6 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
             image.className = gallery[lodedImageInGalleryIndexInArray].class;
             gallery[lodedImageInGalleryIndexInArray].img = image;
         }
+        modalPhotoDescription.innerText = gallery[lodedImageInGalleryIndexInArray].description;
         actualPhoto.appendChild(gallery[lodedImageInGalleryIndexInArray].img);
     }
 

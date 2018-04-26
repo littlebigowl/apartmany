@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         var jsFile = document.createElement("script");
         jsFile.type = "text/javascript";
-        jsFile.src = "https://maps.googleapis.com/maps/api/js?callback=initMap&key=AIzaSyDSeWcGwiJhXeoDuS8S1PQVXCHnlGbyAIs&language=" + lang;
+        jsFile.src = "https://maps.googleapis.com/maps/api/js?callback=initMap&key=AIzaSyBZ_vJVQ2M7yxcgSjkT2HHuZAuldJ_Wr1g&language=" + lang;
         document.getElementsByTagName("head")[0].appendChild(jsFile);
     }
 

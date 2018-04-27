@@ -1,7 +1,7 @@
 "use strict";
 
 document.addEventListener("DOMContentLoaded", function () {
-    console.log("DOM fully loaded and parsed");
+    // console.log("DOM fully loaded and parsed");
 
     // SHOW EMAIL
     var x = "info";
@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
     var z = "humenne";
     document.getElementById("actualEmail").innerText = x + "@" + y + z + ".sk";
     document.getElementById("emailLandingPage").innerText = x + "@" + y + z + ".sk";
-    console.log(x + "@" + y + z + ".sk");
 
     var myNav = document.getElementById("myNav");
     var loadingModal = document.getElementById("loadingModal");

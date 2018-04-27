@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var z = "humenne";
     document.getElementById("actualEmail").innerText = x + "@" + y + z + ".sk";
     document.getElementById("emailLandingPage").innerText = x + "@" + y + z + ".sk";
+    console.log(x + "@" + y + z + ".sk");
 
     var myNav = document.getElementById("myNav");
     var loadingModal = document.getElementById("loadingModal");
